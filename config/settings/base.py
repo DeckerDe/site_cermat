@@ -86,6 +86,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "cermat.users.apps.UsersConfig",
     # Your stuff: custom apps go here
+    "cermat.homepage.apps.HomepageConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
