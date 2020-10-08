@@ -1,3 +1,262 @@
-h1 {
-  color: #DD8A43;
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Opens Sans", Verdana, Arial, serif;
+  font-size: 100%;
+  background-color: #fff;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*Style para a mobile*/
+@media screen and (max-width: 800px) {
+  #app {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  /* HEADER */
+  header {
+    background-color: #fff;
+    height: 10vh;
+    position: fixed;
+    width: 100vw;
+  }
+  #topmenu {
+    display: flex;
+    flex-flow: row wrap;
+    /*outline: 1px solid black; */
+    align-items: center;
+  }
+  #logo_img {
+    margin: 0.2em auto 0.2em 0.2em;
+    width: 40vw;
+  }
+  /* NAVBAR */
+  nav {
+    position: relative;
+  }
+  #topmenu nav img {
+    margin: 1em;
+    width: 10vw;
+  }
+  .nav-links {
+    /*
+      background-color: #1F5581;
+      background: linear-gradient(90deg, rgba(221,138,67,1) 0%, rgba(31,85,129,1) 100%);
+      */
+    background: #1b3066;
+    background: linear-gradient(90deg, #1b3066 0%, #1f5581 100%);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: none;
+    height: 90vh;
+    width: 100vw;
+    position: fixed;
+    clip-path: circle(1px at 90% -10%);
+    -webkit-clip-path: circle(1px at 90% -10%);
+    transition: all 0.4s linear;
+    pointer-events: none;
+    justify-content: space-around;
+    /*Texto*/
+    /*text-transform: uppercase; */
+    font-family: "Rajdhani","Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+  .navLinksOpen {
+    clip-path: circle(1600px at 90% -10%);
+    -webkit-clip-path: circle(1600px at 90% -10%);
+    pointer-events: all;
+  }
+  .somos ul, .prodc ul, .serv ul, .cont ul {
+    display: none;
+  }
+  header a {
+    display: block;
+    text-align: center;
+    border-top: 0;
+    text-decoration: none;
+    color: #fff;
+  }
+  /*Banner*/
+  #banner {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+    height: 85vh;
+  }
+  #banner img {
+    width: 100vw;
+  }
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+@media screen and (min-width: 480px) {
+  /*NAVBAR*/
+  #topmenu nav img {
+    margin: 2em;
+    width: 50px;
+  }
+  nav {
+    align-self: flex-end;
+  }
+  header {
+    height: 12vh;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #app {
+    /*
+      display: grid;
+      grid-template-rows: 10vh 70vh 20vh;
+      grid-template-columns: 5vw auto 5vw;
+      grid-template-areas:
+      "r1 navbar r2"
+      "banner banner banner"
+      "r3 footer r4"
+      */
+    display: flex;
+    flex-direction: column;
+  }
+  #topmenu nav img {
+    display: none;
+  }
+  /*header*/
+  #logo_img img {
+    height: 10vh;
+    margin-top: 0.5em;
+    margin-left: 100px;
+  }
+  #topmenu {
+    margin-right: auto;
+  }
+  header {
+    /*grid-area: navbar;*/
+    height: 12vh;
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  /*NavBar*/
+  .nav-links {
+    margin-right: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    pointer-events: all;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header a {
+    display: block;
+    text-align: center;
+    border-top: 0;
+    text-decoration: none;
+    font-family: "Rajdhani","Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0.5em;
+    transition: all 0.5s ease;
+  }
+  header a:hover {
+    transform: scale(1.1);
+    color: #dd8a43;
+  }
+  .somos, .prodc, .serv, .cont {
+    position: relative;
+  }
+  .somos ul, .prodc ul, .serv ul, .cont ul {
+    position: absolute;
+    display: flex;
+    flex-flow: column wrap;
+    list-style: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    background-color: #1b3066;
+  }
+  .somos:hover ul, .prodc:hover ul, .serv:hover ul {
+    opacity: 1;
+    pointer-events: all;
+  }
+  /*banner*/
+  #banner {
+    height: 90vh;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+  }
+  #banner img {
+    width: 70vw;
+    margin-top: 100px;
+  }
+}
+
+/* Footer */
+footer {
+  display: flex;
+  /*grid-area: footer;*/
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: flex-start;
+  background-color: #1b3066;
+}
+
+footer p {
+  color: #fff;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+footer :nth-child(1) {
+  margin: 1em;
+  height: 8vh;
+}
+
+footer :last-child {
+  margin: 1em;
+  height: 12vh;
+}
+
+@media screen and (max-width: 700px) {
+  footer {
+    width: 100vW;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+  }
+  footer p {
+    display: block;
+  }
+  footer :nth-child(1) {
+    margin-top: .2em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 8vh;
+  }
+  footer :last-child {
+    margin-top: .2em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 10vh;
+  }
 }
