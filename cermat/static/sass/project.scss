@@ -324,9 +324,58 @@ p {
 }
 ////////////////////////LOGIN/////////////////////////////////////
 #login_content{
+  margin: 12vh 2em 0 2em;
+  height: 88vh;
   display: flex;
   flex-direction: column;
   align-content: center;
+  *{
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  p{
+    color: $jet_grey;
+  }
+  h1 {
+    color: $usa_blue;
+    font-family: "Rajdhani","Open Sans", sans-serif;
+
+  }
+}
+form {
+  *{
+    margin-bottom: 0.5em;
+  }
+}
+//////////////BUTTON///////////////////////
+.loginBtn {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: $white;
+  font-family: Open Sans;
+  font-size: 1.2em;
+  font-weight: 400;
+  padding: 0.6em 3em;
+  background-color: $usa_blue;
+  text-shadow: 1px 1px 20px #000000;
+  border: solid $jet_grey 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.loginBtn:hover {
+  background: $space_blue;
+  border: solid $white 1px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.loginBtn:active{
+  background: $per_orange;
 }
 //////////////FOOTER///////////////////////
 footer{
