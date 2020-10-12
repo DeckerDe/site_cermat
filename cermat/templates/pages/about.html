@@ -1,1 +1,35 @@
 {% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %} Quem somos {% endblock %}
+
+{% block content %}
+<div id="wherebar">
+  <p>Inicio</p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p>Quem Somos</p>
+</div>
+<div id="banner_pag" >
+  <h1>
+    Frase forte que empolgue !
+  </h1>
+</div>
+<div id="about_content">
+  <div id="about_text">
+    <h2>O que somos: </h2>
+    <p> Um laboratorio de pesquisa cientifica, situado na Universidade Federal de Santa Catarina.</p>
+    <h2>Nossa Visao</h2>
+    <p>Alguma frase com intuito de mostrar a visao do CERMAT. Creio que algo como a juncao da ciencia com as aplicacoes industriais.</p>
+    <h2><a href="">Clique aqui e conheca nossa equipe!</a></h2>
+  </div>
+  <figure id="about_img">
+    <img src="{% static 'images/about/equipe.jpg' %}">
+    <p> Equipe CERMAT.</p>
+  </figure>
+
+
+</div>
+
+
+
+{% endblock %}

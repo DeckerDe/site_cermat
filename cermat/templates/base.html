@@ -16,8 +16,6 @@
     <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
 
     {% block css %}
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
 
     <!-- Your stuff: Third-party CSS libraries go here -->
     <!-- This file stores project-specific CSS -->
@@ -42,12 +40,7 @@
             <div class="somos">
                 <a href="">Quem Somos</a>
                 <ul>
-                    <li><a href="#">Professores</a></li>
-                    <li><a href="#">Doutorandos</a></li>
-                    <li><a href="#">Mestrandos</a></li>
-                    <li><a href="#">Ics e Alunos de Intercâmbio</a></li>
-                    <li><a href="#">Alumni</a></li>
-                    <li><a href="#">Corpo Técnico</a></li>
+                    <li><a href="#">Equipe</a></li>
                     <li><a href="#">Parceiros</a></li>
                 </ul>
             </div>
@@ -87,8 +80,20 @@
             {% endif %}
         </div>
             </nav>
-    </header>
-
+      </header>
+      <div class="container">
+        {% block content %}
+        <p>Site do lab cermat This text is inherited on other pages!</p>
+        {% endblock %}
+      </div>
+      <footer>
+        <img src="{% static 'images/geral/EMCComBorda.png' %}" alt="Logo EMC com borda">
+            <p>Centro Tecnológico – UFSC – Florianópolis/ SC – Brasil <br>
+                Telefone: + 55 48 3721-7223 <br>
+                Email: cermat@contato.ufsc.br
+            </p>
+        <img src="{% static 'images/geral/brasao_UFSC_vertical_sigla_fundoescuro.svg' %}" alt="Logo UFSC">
+      </footer>
     </div>
     {% block modal %}{% endblock modal %}
 
@@ -96,9 +101,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     {% block javascript %}
-      <!-- Bootstrap JS and its dependencies-->
-      <!-- JavaScript Bundle with Popper.js -->
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
       <!-- Your stuff: Third-party javascript libraries go here -->
       <script src="https://unpkg.com/vue@next"></script>
 

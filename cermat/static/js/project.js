@@ -3,6 +3,7 @@ const app = Vue.createApp({
     data(){
         return{
             showNav: false,
+            teste: "Tenho acesso",
         }
     },
     methods:{
@@ -12,5 +13,6 @@ const app = Vue.createApp({
             }
             else this.showNav = true;
         }
-    }
+    },
+    delimiters: ['[[', ']]'],
 })

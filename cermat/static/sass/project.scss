@@ -108,6 +108,36 @@ body {
   #banner img{
       width: 100vw;
   }
+  ///////////////////////////ABOUT///////////////////////////////
+  /////////////CONTENT////////////////
+  #about_content{
+    display: flex;
+    flex-direction: column;
+    margin: 1em 2em 1em 2em;
+  }
+  #about_text{
+    margin-bottom: 1.2em;
+
+    h2{
+      color: $usa_blue;
+      font-size: 2em;
+    }
+    p{
+      color: $jet_grey;
+      margin-bottom: 1.2em;
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+  #about_img{
+    p{
+      text-align: center;
+      font-size: 0.9em;
+    }
+  }
+
+
 
 }
 
@@ -136,25 +166,11 @@ p {
 }
 
 @media screen and (min-width: 800px){
-  #app{
-      /*
-      display: grid;
-      grid-template-rows: 10vh 70vh 20vh;
-      grid-template-columns: 5vw auto 5vw;
-      grid-template-areas:
-      "r1 navbar r2"
-      "banner banner banner"
-      "r3 footer r4"
-      */
-      display: flex;
-      flex-direction: column;
-
-  }
 
   #navbar nav img{
       display: none;
   }
-  /*header*/
+  /////////////////HEADER/////////////
   #logo_img img{
       height: 10vh;
       margin-top: 0.5em;
@@ -172,11 +188,10 @@ p {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
-      border-bottom: 1px solid $per_orange;
       padding-bottom: 2em;
+      background-color: $white;
   }
-
-  /*NavBar*/
+  //////////////NAVBAR/////////////////
   .nav-links{
       margin-right: 100px;
       display: flex;
@@ -212,6 +227,7 @@ p {
       flex-flow: column wrap;
       list-style: none;
       opacity: 0;
+      background-color: $white;
       pointer-events: none;
       transition: all 0.5s ease;
   }
@@ -219,8 +235,12 @@ p {
       opacity: 1;
       pointer-events: all;
   }
-
-  /*banner*/
+  ///////////////CONTENT/////////////////
+  .container{
+  padding-top: 12vh;
+  }
+  ////////////////HOMEPAGE/////////////////////////////////////////
+  /////////////////////BANNER///////////////
   #banner{
       height: 90vh;
       margin-top: 10vh;
@@ -231,10 +251,84 @@ p {
       width: 70vw;
       margin-top: 100px;
   }
+  ////////////////////ABOUT////////////////////////////////////////
+  //////////////CONTENT////////////////
+  #about_content{
+    display: flex;
+    flex-direction: row;
+    margin: 5em 6em 5em 6em;
+  }
+  #about_text{
+    margin-right: 5em;
+    *{
+      margin-top: 1.5em;
+    }
+    :first-child{
+      margin-top: 0;
+    }
+    h2 {
+      color: $usa_blue;
+      font-size: 2em;
+    }
+    p{
+      color: $jet_grey;
+      margin-right: 10em;
+      font-size: 1em;
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+  #about_img{
+    p{
+      text-align: center;
+      font-size: 0.9em;
+    }
+  }
 }
-
-/* Footer */
-
+/////////////ABOUT/////////////////////////////////////////////////
+/////////////BANNER////////////
+#banner_pag{
+  height: 50vh;
+  background-image: url(../images/geral/micro/CaulinitaMEV1.png);
+  background-size: cover;
+  background-position: center 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: $white;
+    font-size: 4em;
+  }
+}
+////Wherebar//////
+#wherebar{
+  padding-left: 5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 5vh;
+  border-bottom: 1px $per_orange solid;
+  border-top: 1px $per_orange solid;
+  img {
+    height: 3vh;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+////////////CONTENT/////////////////////////
+#about_img{
+  img{
+    max-width: 100%;
+  }
+}
+////////////////////////LOGIN/////////////////////////////////////
+#login_content{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+//////////////FOOTER///////////////////////
 footer{
   display: flex;
   /*grid-area: footer;*/
@@ -291,7 +385,7 @@ footer :last-child{
 }
 
 ////////////////////////////////
-		//Variables//
+		//Alerts//
 ////////////////////////////////
 
 // Alert colors
@@ -302,10 +396,6 @@ $black: #000;
 $pink: #f2dede;
 $dark-pink: #eed3d7;
 $red: #b94a48;
-
-////////////////////////////////
-		//Alerts//
-////////////////////////////////
 
 // bootstrap alert CSS, translated to the django-standard levels of
 // debug, info, success, warning, error
