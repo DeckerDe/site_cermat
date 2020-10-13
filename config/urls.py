@@ -26,7 +26,7 @@ urlpatterns = [
     ),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-    path("publica/", include('publica.urls', namespace='publica')),
+    path("publica/", include('cermat.publica.urls', namespace='publica')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
