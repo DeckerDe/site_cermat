@@ -1,10 +1,22 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<h1>{{ post.title }}</h1>
-<p class="date">
-  Publicado em {{ post.publish }} por {{ post.author }}
-</p>
-{{post.body|linebreaks }}
+<div class="wherebar">
+  <p><a href="{% url 'home' %}" >Inicio</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="">Produção Científica</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="{% url 'publica:lista_publica' %}">Publicações</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p>{{post.title}}</p>
+</div>
+<div class="contentContainer">
+  <h1>{{ post.title }}</h1>
+  <p class="date">
+    Publicado em {{ post.publish }} por {{ post.author }}
+  </p>
+  {{post.body|linebreaks }}
+</div>
 {% endblock %}
 

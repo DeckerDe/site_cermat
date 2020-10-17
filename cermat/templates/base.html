@@ -38,7 +38,7 @@
         </div>
         <div class="nav-links" :class="{navLinksOpen: showNav}">
             <div class="somos">
-                <a href="">Quem Somos</a>
+                <a href="{% url 'sobre' %}">Quem Somos</a>
                 <ul>
                     <li><a href="#">Equipe</a></li>
                     <li><a href="#">Parceiros</a></li>
@@ -47,7 +47,7 @@
             <div class="prodc">
                 <a href="">Produção Científica</a>
                 <ul>
-                  <li><a href="">Publicações</a></li>
+                  <li><a href="{% url 'publica:lista_publica' %}">Publicações</a></li>
                   <li><a href="#">Patentes</a></li>
                   <li><a href="#">Produtos Tecnológicos</a></li>
                   <li><a href="#">Linhas de Pesquisa</a></li>
@@ -56,9 +56,7 @@
             <div class="serv">
                 <a href="">Serviços</a>
                 <ul>
-                    <li><a href="#">Equipamentos</a></li>
-                    <li><a href="#">Análises</a></li>
-                    <li><a href="#">Consultoria</a></li>
+                    <li><a href="#">Peerlab</a></li>
                 </ul>
             </div>
             <div class="cont">

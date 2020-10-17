@@ -1,15 +1,39 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<h1> Publicações </h1>
-  {% for post in posts %}
-  <h2>
-    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-  </h2>
-  <p class="date">
-    Publicado em {{ post.publish }} por {{ post.author }}
-  </p>
-  {{ post.body| truncatewords:30|linebreaks }}
-  {% endfor %}
-  {% include "publica/pagination.html" with page=posts %}
+  <div class="wherebar">
+    <p><a href="{% url 'home' %}" >Inicio</a></p>
+    <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+    <p><a href="" >Produção Científica</a></p>
+    <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+    <p>Publicações</p>
+  </div>
+  <div class="contentContainer">
+    <h1 id="PubliTitle"> Publicações </h1>
+    <form id="publiBusca">
+      <input name="busca" type="text" placeholder="Buscar por publicações.">
+    </form>
+    <div class="publibox">
+      {% if posts %}
+      {% for post in posts %}
+        <div class="publicard">
+          <h2>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+          </h2>
+          <p class="date">
+            Publicado em {{ post.publish }} por {{ post.author }}
+          </p>
+          {{ post.body| truncatewords:50|linebreaks }}
+          <h3>
+            <a href="{{ post.get_absolute_url }}">Saiba Mais.</a>
+          </h3>
+        </div>
+      {% endfor %}
+      {% else %}
+       <p>Desculpe, não encontramos nenhuma publicação que corresponde à pesquisa realizada.</p>
+      {% endif %}
+    </div>
+    {% include "publica/pagination.html" with page=posts %}
+  </div>
 {% endblock %}
