@@ -283,6 +283,12 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  color: #DD8A43;
+  font-family: "Rajdhani","Open Sans", sans-serif;
+  text-align: center;
+}
+
 p {
   font-family: "Open Sans", sans-serif;
   color: #222222;
@@ -354,7 +360,7 @@ p {
   max-width: 100%;
 }
 
-#login_content {
+.auth_content {
   margin: 12vh 2em 0 2em;
   height: 88vh;
   display: flex;
@@ -362,16 +368,16 @@ p {
   align-content: center;
 }
 
-#login_content * {
+.auth_content * {
   text-align: center;
   margin-bottom: 0.5em;
 }
 
-#login_content p {
+.auth_content p {
   color: #333;
 }
 
-#login_content h1 {
+.auth_content h1 {
   color: #1F5581;
   font-family: "Rajdhani","Open Sans", sans-serif;
 }
@@ -380,10 +386,7 @@ form * {
   margin-bottom: 0.5em;
 }
 
-.loginBtn {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+.authBtn {
   color: #FFF;
   font-family: Open Sans;
   font-size: 1.2em;
@@ -398,16 +401,40 @@ form * {
   text-align: center;
 }
 
-.loginBtn:hover {
+.authBtn:hover {
   background: #1B3066;
   border: solid #FFF 1px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
   text-decoration: none;
 }
 
-.loginBtn:active {
+.authBtn:active {
+  background: #DD8A43;
+}
+
+.smallBtn {
+  color: #FFF;
+  font-family: Open Sans;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0.3em 1.5em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  background-color: #1F5581;
+  text-shadow: 1px 1px 20px #000000;
+  border: solid #333 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.smallBtn:hover {
+  background: #1B3066;
+  border: solid #FFF 1px;
+  text-decoration: none;
+}
+
+.smallBtn:active {
   background: #DD8A43;
 }
 
