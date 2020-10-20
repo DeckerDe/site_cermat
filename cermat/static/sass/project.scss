@@ -118,12 +118,12 @@ body {
   }
   ///////////////////////////ABOUT///////////////////////////////
   /////////////CONTENT////////////////
-  #about_content{
+  .about_content{
     display: flex;
     flex-direction: column;
     margin: 1em 2em 1em 2em;
   }
-  #about_text{
+  .about_text{
     margin-bottom: 1.2em;
 
     h2{
@@ -144,10 +144,19 @@ body {
       font-size: 0.9em;
     }
   }
+  #banner_text{
+    display: none;
+  }
   //////////////////PUBLICA//////////////////////////////////////////////
   #publiBusca{
     text-align: center;
     margin-bottom: 0.2em;
+  }
+  /////////////////////MAILPAGE///////////////////////////////////////////
+  #mailContainer{
+    margin: 0;
+    padding: 0.4em;
+    margin-bottom: 2em;
   }
 }
 
@@ -164,6 +173,10 @@ body {
 
   header{
       height: 12vh;
+  }
+  ///////////////////////////////////////////MAILPAGE////////////////////////////////
+  #mailContainer{
+    padding-top: 5vh;
   }
 
 
@@ -282,12 +295,12 @@ body {
   }
   ////////////////////ABOUT////////////////////////////////////////
   //////////////CONTENT////////////////
-  #about_content{
+  .about_content{
     display: flex;
     flex-direction: row;
     margin: 5em 6em 5em 6em;
   }
-  #about_text{
+  .about_text{
     margin-right: 5em;
     *{
       margin-top: 1.5em;
@@ -336,6 +349,19 @@ p {
   color: $jet_grey;
   margin-bottom: .4em;
 }
+//////////////////////BANNER///////////////////////////
+.banner_pag{
+  height: 50vh;
+  background-size: cover;
+  background-position: center 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: $white;
+    font-size: 3em;
+  }
+}
 ////////////////////////PUBLIS/////////////////////////////
 .publibox{
   display: flex;
@@ -378,21 +404,14 @@ p {
 
 }
 /////////////////PUBLICA DETAIL//////////////////////////////////
-
+///////////////////SCIPROD///////////////////////////////////////
+#sci_banner{
+  background-image: url(../images/geral/micro/CaulinitaMEV1.png);
+}
 /////////////ABOUT/////////////////////////////////////////////////
 /////////////BANNER////////////
-#banner_pag{
-  height: 50vh;
+#about_banner{
   background-image: url(../images/geral/micro/CaulinitaMEV1.png);
-  background-size: cover;
-  background-position: center 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  h1 {
-    color: $white;
-    font-size: 4em;
-  }
 }
 ////////////CONTENT/////////////////////////
 #about_img{
@@ -473,6 +492,12 @@ form {
 }
 .smallBtn:active{
   background: $per_orange;
+}
+
+.profBtn{
+  flex-grow: 0;
+  width: 10em;
+  align-self: center;
 }
 //////////////FOOTER///////////////////////
 footer{

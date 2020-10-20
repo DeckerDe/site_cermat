@@ -55,14 +55,14 @@
           </div>
           <div class="nav-links" :class="{navLinksOpen: showNav}">
               <div class="somos">
-                  <a href="">Quem Somos</a>
+                  <a href="{% url 'sobre' %}">Quem Somos</a>
                   <ul>
-                      <li><a href="#">Equipe</a></li>
-                      <li><a href="#">Parceiros</a></li>
+                      <li><a href="{% url 'equipe' %}">Equipe</a></li>
+                      <li><a href="{% url 'parceiros' %}">Parceiros</a></li>
                   </ul>
               </div>
               <div class="prodc">
-                  <a href="">Produção Científica</a>
+                <a href="{% url 'prodCient' %}">Produção Científica</a>
                   <ul>
                       <li><a href="#">Patentes</a></li>
                       <li><a href="#">Produtos Tecnológicos</a></li>

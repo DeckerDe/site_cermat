@@ -99,32 +99,40 @@ body {
   #banner img {
     width: 100vw;
   }
-  #about_content {
+  .about_content {
     display: flex;
     flex-direction: column;
     margin: 1em 2em 1em 2em;
   }
-  #about_text {
+  .about_text {
     margin-bottom: 1.2em;
   }
-  #about_text h2 {
+  .about_text h2 {
     color: #1F5581;
     font-size: 2em;
   }
-  #about_text p {
+  .about_text p {
     color: #333;
     margin-bottom: 1.2em;
   }
-  #about_text a {
+  .about_text a {
     text-decoration: none;
   }
   #about_img p {
     text-align: center;
     font-size: 0.9em;
   }
+  #banner_text {
+    display: none;
+  }
   #publiBusca {
     text-align: center;
     margin-bottom: 0.2em;
+  }
+  #mailContainer {
+    margin: 0;
+    padding: 0.4em;
+    margin-bottom: 2em;
   }
 }
 
@@ -139,6 +147,9 @@ body {
   }
   header {
     height: 12vh;
+  }
+  #mailContainer {
+    padding-top: 5vh;
   }
 }
 
@@ -245,30 +256,30 @@ body {
     width: 70vw;
     margin-top: 100px;
   }
-  #about_content {
+  .about_content {
     display: flex;
     flex-direction: row;
     margin: 5em 6em 5em 6em;
   }
-  #about_text {
+  .about_text {
     margin-right: 5em;
   }
-  #about_text * {
+  .about_text * {
     margin-top: 1.5em;
   }
-  #about_text :first-child {
+  .about_text :first-child {
     margin-top: 0;
   }
-  #about_text h2 {
+  .about_text h2 {
     color: #1F5581;
     font-size: 2em;
   }
-  #about_text p {
+  .about_text p {
     color: #333;
     margin-right: 10em;
     font-size: 1em;
   }
-  #about_text a {
+  .about_text a {
     text-decoration: none;
   }
   #about_img p {
@@ -298,6 +309,20 @@ p {
 .date {
   color: #333;
   margin-bottom: .4em;
+}
+
+.banner_pag {
+  height: 50vh;
+  background-size: cover;
+  background-position: center 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner_pag h1 {
+  color: #FFF;
+  font-size: 3em;
 }
 
 .publibox {
@@ -341,19 +366,12 @@ p {
   margin: 0.3em;
 }
 
-#banner_pag {
-  height: 50vh;
+#sci_banner {
   background-image: url(../images/geral/micro/CaulinitaMEV1.png);
-  background-size: cover;
-  background-position: center 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-#banner_pag h1 {
-  color: #FFF;
-  font-size: 4em;
+#about_banner {
+  background-image: url(../images/geral/micro/CaulinitaMEV1.png);
 }
 
 #about_img img {
@@ -436,6 +454,12 @@ form * {
 
 .smallBtn:active {
   background: #DD8A43;
+}
+
+.profBtn {
+  flex-grow: 0;
+  width: 10em;
+  align-self: center;
 }
 
 footer {
