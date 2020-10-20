@@ -1,21 +1,13 @@
-from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 
+class Profile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, blank=True)
 
-class User(AbstractUser):
+    photo = models.ImageField(upload_to='usersprof', blank=True)
 
-    # First Name and Last Name Do Not Cover Name Patterns
-    # Around the Globe.
-    name = models.CharField(
-        _("Name of User"), blank=True, max_length=255
-    )
-    date_of_birth = models.DateField(blank=True, null=True)
-    #photo = models.ImageField(upload_to=, blank=True)
-
-    def get_absolute_url(self):
-        return reverse(
-            "users:detail", kwargs={"username": self.username}
-        )
+    def __str__(self):
+        return f'Perfil do usuário {self,user.username}'

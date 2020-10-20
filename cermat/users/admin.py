@@ -6,11 +6,9 @@ from cermat.users.forms import (
     UserChangeForm,
     UserCreationForm,
 )
+from .models import Profile
 
-User = get_user_model()
-
-
-@admin.register(User)
+@admin.register(Profile)
 class UserAdmin(auth_admin.UserAdmin):
 
     form = UserChangeForm
@@ -18,5 +16,5 @@ class UserAdmin(auth_admin.UserAdmin):
     fieldsets = (
         ("User", {"fields": ("name",)}),
     ) + auth_admin.UserAdmin.fieldsets
-    list_display = ["username", "name", "is_superuser"]
-    search_fields = ["name"]
+    list_display = ["username", "is_superuser"]
+
