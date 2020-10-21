@@ -1,24 +1,7 @@
 from django.contrib import admin
-from django.contrib.auth import admin as auth_admin
-from django.contrib.auth import get_user_model
+from .models import Profile
 
-from cermat.users.forms import (
-    UserChangeForm,
-    UserCreationForm,
-)
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display= ['user', 'name', 'photo']
 
-User = get_user_model()
-
-
-admin.site.unregister(User)
-class UserAdmin(auth_admin.UserAdmin):
-
-    form = UserChangeForm
-    add_form = UserCreationForm
-    fieldsets = (
-        ("User", {"fields": ("name",)}),
-    ) + auth_admin.UserAdmin.fieldsets
-    list_display = ["username", "is_superuser"]
-
-
-admin.site.register(User, UserAdmin)

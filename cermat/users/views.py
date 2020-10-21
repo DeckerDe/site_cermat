@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
+from .models import Profile
 from django.views.generic import (
     DetailView,
     RedirectView,
