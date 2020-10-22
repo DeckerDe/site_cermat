@@ -311,6 +311,11 @@ p {
   margin-bottom: .4em;
 }
 
+#avatar {
+  width: 150px;
+  align-self: center;
+}
+
 .banner_pag {
   height: 50vh;
   background-size: cover;

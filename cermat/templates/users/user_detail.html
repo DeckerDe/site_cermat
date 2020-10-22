@@ -4,15 +4,23 @@
 {% block title %}Usuário: {{ object.username }}{% endblock %}
 
 {% block content %}
+<div class="wherebar">
+  <p><a href="{% url 'home' %}" >Inicio</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p>Minha Conta</p>
+</div>
 <div class="auth_content">
   <h2>{{ object.username }}</h2>
   {% if object.name %}
     <p>{{ object.name }}</p>
   {% endif %}
+    <img id="avatar" src="/media/{{object.photo}}">
+    <P>{{object.date_of_birth}}</P>
+
 
   {% if object == request.user %}
 <!-- Action buttons -->
-    <a class="smallBtn profBtn" href="{% url 'users:update' %}" role="button">Meu Perfil</a>
+    <a class="smallBtn profBtn" href="{% url 'users:update' %}" role="button">Atualizar perfil</a>
     <a class="smallBtn profBtn" href="{% url 'account_email' %}" role="button">E-Mail</a>
     <!-- Your Stuff: Custom user template urls -->
 
