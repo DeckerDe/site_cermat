@@ -3,6 +3,14 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Publica, Project
 from django.db.models import Q
 from django.contrib.postgres.search import TrigramSimilarity
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import CreatePublicaForm
+from django.views.generic.edit import (
+    CreateView,
+    UpdateView
+)
+
+
 def post_list(request):
     query =  request.GET.get('busca')
     if query:
@@ -29,6 +37,11 @@ def post_detail(request, year, month, day, post):
         publish__month=month,
         publish__day=day)
     return render(request, 'publica/detail.html', {'post':post})
+
+class CreatePublica(LoginRequiredMixin,CreateView):
+    template_name_suffix  = '_create_form'
+    model = Publica
+    form_class = CreatePublicaForm
 
 def lista_projetos(request):
 

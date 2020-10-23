@@ -43,9 +43,9 @@ class Publica(models.Model):
         ('rascunho', 'Rascunho'),
         ('publicado', 'Publicado')
     )
-    title = models.CharField(max_length=250)
+    title = models.CharField(max_length=250, unique=True)
     proj = models.ForeignKey(Project, on_delete=models.CASCADE, default='11000')
-    slug = models.SlugField(max_length=250, unique_for_date='publish')
+    slug = models.SlugField(max_length=250, unique_for_date='publish', unique=True)
     author = models.ForeignKey(User, related_name='publica_posts', on_delete=models.PROTECT)
     sec_author = models.ManyToManyField(User)
     body = models.TextField()
