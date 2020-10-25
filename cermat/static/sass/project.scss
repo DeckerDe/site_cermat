@@ -409,7 +409,29 @@ p {
   margin: 0.3em;
 
 }
-/////////////////PUBLICA DETAIL//////////////////////////////////
+/////////////////PUBLICA CRIAR//////////////////////////////////
+#div_id_slug{
+  div{
+    display: flex;
+    flex-direction: column;
+    #id_slug{
+      width: 200px;
+      align-self: center;
+    }
+  }
+}
+#publica_creation{
+  display: flex;
+  flex-direction: column;
+  *{
+    text-align: center;
+  }
+  input{
+    align-self: center;
+  }
+
+
+}
 ///////////////////SCIPROD///////////////////////////////////////
 #sci_banner{
   background-image: url(../images/geral/micro/CaulinitaMEV1.png);

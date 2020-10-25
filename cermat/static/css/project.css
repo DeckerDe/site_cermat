@@ -371,6 +371,29 @@ p {
   margin: 0.3em;
 }
 
+#div_id_slug div {
+  display: flex;
+  flex-direction: column;
+}
+
+#div_id_slug div #id_slug {
+  width: 200px;
+  align-self: center;
+}
+
+#publica_creation {
+  display: flex;
+  flex-direction: column;
+}
+
+#publica_creation * {
+  text-align: center;
+}
+
+#publica_creation input {
+  align-self: center;
+}
+
 #sci_banner {
   background-image: url(../images/geral/micro/CaulinitaMEV1.png);
 }
