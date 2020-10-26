@@ -44,5 +44,9 @@ class CreatePublica(LoginRequiredMixin,CreateView):
     form_class = CreatePublicaForm
 
 def lista_projetos(request):
+    #TODO: Create this view.
 
     return render(request, 'publica/list.html')
+
+def prod_cient(request):
+    return render(request, 'publica/scientific.html')

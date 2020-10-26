@@ -86,6 +86,32 @@ body {
   .container {
     padding-top: 10vh;
   }
+  .content_container {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 2em 1em 2em;
+  }
+  .content_text {
+    margin-bottom: 1.2em;
+  }
+  .content_text h2 {
+    color: #1F5581;
+    font-size: 2em;
+  }
+  .content_text p {
+    color: #333;
+    margin-bottom: 1.2em;
+  }
+  .content_text a {
+    text-decoration: none;
+  }
+  .content_img p {
+    text-align: center;
+    font-size: 0.9em;
+  }
+  .content_img p a {
+    text-decoration: none;
+  }
   .wherebar {
     display: none;
   }
@@ -98,29 +124,6 @@ body {
   }
   #banner img {
     width: 100vw;
-  }
-  .about_content {
-    display: flex;
-    flex-direction: column;
-    margin: 1em 2em 1em 2em;
-  }
-  .about_text {
-    margin-bottom: 1.2em;
-  }
-  .about_text h2 {
-    color: #1F5581;
-    font-size: 2em;
-  }
-  .about_text p {
-    color: #333;
-    margin-bottom: 1.2em;
-  }
-  .about_text a {
-    text-decoration: none;
-  }
-  #about_img p {
-    text-align: center;
-    font-size: 0.9em;
   }
   #banner_text {
     display: none;
@@ -246,6 +249,50 @@ body {
     margin-left: 100px;
     margin-right: 100px;
   }
+  .content_container {
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: 6em 1fr 1fr 6em;
+    grid-template-rows: 5em 1fr 1fr 5em;
+  }
+  .content_container * {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+  }
+  .content_container :first-child {
+    margin-top: 0;
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  .content_container :nth-child(2) {
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+  .content_container :nth-child(3) {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+  .content_container h2 {
+    color: #1F5581;
+    font-size: 2em;
+  }
+  .content_container p {
+    color: #333;
+    margin-right: 10em;
+    font-size: 1em;
+  }
+  .content_container a {
+    text-decoration: none;
+  }
+  .content_img p {
+    text-align: center;
+    font-size: 0.9em;
+    justify-self: center;
+  }
+  .content_img p a {
+    text-decoration: none;
+  }
   #banner {
     height: 90vh;
     margin-top: 10vh;
@@ -255,36 +302,6 @@ body {
   #banner img {
     width: 70vw;
     margin-top: 100px;
-  }
-  .about_content {
-    display: flex;
-    flex-direction: row;
-    margin: 5em 6em 5em 6em;
-  }
-  .about_text {
-    margin-right: 5em;
-  }
-  .about_text * {
-    margin-top: 1.5em;
-  }
-  .about_text :first-child {
-    margin-top: 0;
-  }
-  .about_text h2 {
-    color: #1F5581;
-    font-size: 2em;
-  }
-  .about_text p {
-    color: #333;
-    margin-right: 10em;
-    font-size: 1em;
-  }
-  .about_text a {
-    text-decoration: none;
-  }
-  #about_img p {
-    text-align: center;
-    font-size: 0.9em;
   }
 }
 
@@ -395,7 +412,11 @@ p {
 }
 
 #sci_banner {
-  background-image: url(../images/geral/micro/CaulinitaMEV1.png);
+  background-image: url(../images/geral/micro/ZTA1020.jpg);
+}
+
+#sci_img img {
+  max-width: 100%;
 }
 
 #about_banner {

@@ -8,5 +8,6 @@ urlpatterns =[
     path('', views.post_list, name='lista_publica'),
     path('<int:year>/<int:month>/<int:day>/<slug:post>/', views.post_detail, name='publica_detalhe'),
     path('criar_publica/', views.CreatePublica.as_view(), name='criar_publica'),
-    path('projetos/', views.lista_projetos, name='lista_projetos')
+    path('projetos/', views.lista_projetos, name='lista_projetos'),
+    path('prod_cient/', views.prod_cient, name='prod_cient')
 ]
