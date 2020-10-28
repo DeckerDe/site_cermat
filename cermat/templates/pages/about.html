@@ -17,31 +17,50 @@
 <div class="content_container">
   <div class="content_text">
     <h2>O que somos: </h2>
-    <p> Um laboratorio de pesquisa cientifica, situado na Universidade Federal de Santa Catarina.</p>
-    <h2>Nossa Visao</h2>
-    <p>Alguma frase com intuito de mostrar a visao do CERMAT. Creio que algo como a junção da ciencia com as aplicações industriais.</p>
-    <h2><a href="{% url 'equipe' %}">Clique aqui e conheca nossa equipe!</a></h2>
+    <p class="about_text"> Um laboratorio de pesquisa cientifica, situado na Universidade Federal de Santa Catarina.</p>
+    <h2>Nossa Visão</h2>
+    <p class="about_text"> Ser o laboratório de referência em excelência na pesquisa. Fazer com que a pesquisa e o desenvolvimento se propaguem da academia para a indústria.
+    </p>
+    <h2><a href="{% url 'equipe' %}">Conheça nossa equipe!</a></h2>
   </div>
-  <figure class="content_img" id="about_img">
+  <figure class="content_img" id="team_img">
     <img src="{% static 'images/about/equipe.jpg' %}">
     <p> Equipe CERMAT.</p>
   </figure>
-  <div class="content_text">
+  <div class="content_text hist_text" >
     <h2>Um pouco de nossa história:</h2>
-    <p>A origem da Divisão de Processamento de Materiais Cerâmicos disposta no conjunto de atividades do <strong>CERMAT</strong>, Núcleo de Pesquisa em Materiais Cerâmicos e Compósitos do Departamento de Eng.
+    <p>A origem da Divisão de Processamento de Materiais Cerâmicos disposta no conjunto de atividades do CERMAT, Núcleo de Pesquisa em Materiais Cerâmicos e Compósitos do Departamento de Eng.
       Mecânica da Universidade Federal de Santa Catarina remonta sua origem em 1991, quando se iniciou, no âmbito da Pós-Graduação em Engenharia Mecânica, um programa de formação de recursos humanos, mestres e doutores, na área de cerâmica, voltado à pesquisa científica e tecnológica.
       Com a criação em 1995 do Programa de Pós-Graduação em Ciência e Engenharia de Materiais (PGMAT), com base na filosofia interdisciplinar, houve uma ampliação do espectro de conhecimento e atuação em cerâmica, pelo envolvimento de professores e pesquisadores de outras áreas de Engenharia (Química e Civil), da Química e da Física.
+    </p>
+  </div>
+  <figure class="content_img">
+    <img src="{% static 'images/about/entrada_Cermat.jpg' %}">
+    <p> Entrada do laboratório CERMAT.</p>
+  </figure>
+  <div class="content_text hist_text">
+    <p>
       Posteriormente, foram desencadeadas iniciativas de integração com as Ciências da Saúde e Biológicas, resultando na criação de uma nova área de pesquisa, a de Biomateriais, intensificada nos últimos anos.
       As atividades de pesquisa em cerâmica de alta performance e compósitos foram concentradas basicamente no Núcleo de Pesquisas em Materiais Cerâmicos e Compósitos (CERMAT) do Departamento de Engenharia Mecânica (EMC) da UFSC.
-      As unidades de pesquisa da UFSC em Materiais de Engenharia, concentradas no LABMAT/EMC e LABMAC/EQA, integram atualmente laboratórios de propriedades mecânicas, laboratório de microscopia ótica e eletrônica, preparação de amostras, análise química, análise térmica, reologia e processamento de materiais particulados.</p>
-      <p>Os principais equipamentos disponíveis incluem, maquinas universais de ensaios mecânicos para ensaios estáticos e dinâmicos, sistema de análise térmica Netzsch (DTA, TG e DSC), dilatômetro (1600ºC), durômetros diversos, microdurômetro Shimadzu, porosímetro de mercúrio, fornos tubulares de sinterização, microscópios óticos,
-        forno para sinterização de metal duro (1400°C) com atmosfera controlada, sistemas de processamento de dados com microcomputadores e periféricos, prensas para compactação de pós, analisador de imagens acoplados aos microscópios eletrônico e ótico, moinhos, viscosímetro Haake VT550, analisador de potencial Brookhaven Zetaplus,
-         equipamento para colagem de fitas (tape casting), unidade de fabricação tridimensional por impressão 3D-Printer, Z402, Z-Corp Inc.), impregnadora de esponjas para réplica em cerâmica, entre outros.
-        O Núcleo vem há vários anos desenvolvendo pesquisa e inovação em materiais cerâmicos tradicionais e de alto desempenho, metalurgia do pó e materiais compósitos, sendo que recentemente dada</p>
-        <p>a importância e demanda da área, vem alocando esforços em compósitos de matrizes cerâmicas e poliméricas.
-          A equipe de pesquisadores tem ao longo dos últimos dez anos atuado intensivamente como coordenadores e/ou pesquisadores de projetos científicos e tecnológicos no âmbito do ensino, pesquisa e extensão universitária a nível nacional e internacional na área de materiais cerâmicos e compósitos, sendo todos os seus integrantes pesquisadores de produtividade em pesquisa (PQ) do CNPq.
-          Ao longo de sua trajetória, os professores associados ao CERMAT orientaram mais de 36 teses de doutorado, 95 dissertações de mestrado e 77 trabalhos de conclusão de cursos de graduação. Publicaram mais de 288 trabalhos completos em anais de congressos e mais de 323 artigos científicos e tecnológicos em periódicos e revistas especializadas, com 13 patentes obtidas.</p>
+      As unidades de pesquisa da UFSC em Materiais de Engenharia, concentradas no LABMAT/EMC e LABMAC/EQA, integram atualmente laboratórios de propriedades mecânicas, laboratório de microscopia ótica e eletrônica, preparação de amostras, análise química, análise térmica, reologia e processamento de materiais particulados.
+      Os principais equipamentos disponíveis incluem, maquinas universais de ensaios mecânicos para ensaios estáticos e dinâmicos, sistema de análise térmica Netzsch (DTA, TG e DSC), dilatômetro (1600ºC), durômetros diversos, microdurômetro Shimadzu, porosímetro de mercúrio, fornos tubulares de sinterização, microscópios óticos,
+      forno para sinterização de metal duro (1400°C) com atmosfera controlada, sistemas de processamento de dados com microcomputadores e periféricos, prensas para compactação de pós, analisador de imagens acoplados aos microscópios eletrônico e ótico, moinhos, viscosímetro Haake VT550, analisador de potencial Brookhaven Zetaplus,
+      equipamento para colagem de fitas (tape casting), unidade de fabricação tridimensional por impressão 3D-Printer, Z402, Z-Corp Inc.), impregnadora de esponjas para réplica em cerâmica, entre outros.
+      O Núcleo vem há vários anos desenvolvendo pesquisa e inovação em materiais cerâmicos tradicionais e de alto desempenho, metalurgia do pó e materiais compósitos, sendo que recentemente dada</p>
   </div>
+  <figure class="content_img" >
+    <img src="{% static 'images/about/salalimpa1.jpg' %}">
+    <p> Sala do CERMAT.</p>
+  </figure>
+  <div class="content_text hist_text">
+    <p>a importância e demanda da área, vem alocando esforços em compósitos de matrizes cerâmicas e poliméricas.
+      A equipe de pesquisadores tem ao longo dos últimos dez anos atuado intensivamente como coordenadores e/ou pesquisadores de projetos científicos e tecnológicos no âmbito do ensino, pesquisa e extensão universitária a nível nacional e internacional na área de materiais cerâmicos e compósitos, sendo todos os seus integrantes pesquisadores de produtividade em pesquisa (PQ) do CNPq.
+      Ao longo de sua trajetória, os professores associados ao CERMAT orientaram mais de 36 teses de doutorado, 95 dissertações de mestrado e 77 trabalhos de conclusão de cursos de graduação. Publicaram mais de 288 trabalhos completos em anais de congressos e mais de 323 artigos científicos e tecnológicos em periódicos e revistas especializadas, com 13 patentes obtidas.</p>
+  </div>
+  <figure class="content_img" id="sala2_img">
+    <img src="{% static 'images/about/sala2.jpg' %}">
+    <p> Sala do CERMAT.</p>
+  </figure>
 </div>
 
 

@@ -44,9 +44,33 @@ class CreatePublica(LoginRequiredMixin,CreateView):
     form_class = CreatePublicaForm
 
 def lista_projetos(request):
-    #TODO: Create this view.
+    query =  request.GET.get('busca')
+    if query:
+        object_list = Projects.objects.filter(Q(title__icontains=query) | Q(body__icontains=query))
+    else:
+        object_list = Project.objects.all()
+    paginator = Paginator(object_list, 5) # 3 Posts in each page
+    page = request.GET.get('page')
+    try:
+        projects = paginator.page(page)
+    except PageNotAnInteger:
+        # if page is not an integer deliver the fist page.
+        projects = paginator.page(1)
+    except EmptyPage:
+        #if page is out of range deliver last page of results
+        projects = paginator.page(paginator.num_pages)
+    return render(request, 'publica/project_list.html', {'page':page, 'projects':projects})
 
-    return render(request, 'publica/list.html')
+def projeto_detalhe(request, year, month, day, project_slug):
+    post = get_object_or_404(
+        Project, slug=project_slug,
+        start__year = year,
+        start__month = month,
+        start__day = day
+    )
+    return render(request, 'publica/project_detail.html', {'project': project_slug})
 
 def prod_cient(request):
-    return render(request, 'publica/scientific.html')
+    projects = Project.objects.all()
+
+    return render(request, 'publica/scientific.html', { 'projects': projects })

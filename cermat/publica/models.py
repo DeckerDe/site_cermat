@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+from django.utils.text import slugify
 
 User = get_user_model()
 
@@ -33,8 +34,19 @@ class Project(models.Model):
     members = models.CharField(max_length=1000)
     funders = models.CharField(max_length=1000, blank=True)
 
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.title)
+
+        super(Project, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse(
+            'publica:projeto_detalhe',
+            args=[self.start.year, self.start.month, self.start.day, self.slug])
 
 class Publica(models.Model):
     objects = models.Manager() #Default manager
@@ -53,6 +65,12 @@ class Publica(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices= STATUS_CHOICES)
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.title)
+
+        super(Publica, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ('-publish',)

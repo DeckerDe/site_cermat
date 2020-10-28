@@ -9,5 +9,6 @@ urlpatterns =[
     path('<int:year>/<int:month>/<int:day>/<slug:post>/', views.post_detail, name='publica_detalhe'),
     path('criar_publica/', views.CreatePublica.as_view(), name='criar_publica'),
     path('projetos/', views.lista_projetos, name='lista_projetos'),
-    path('prod_cient/', views.prod_cient, name='prod_cient')
+    path('prod_cient/', views.prod_cient, name='prod_cient'),
+    path('proj/<int:year>/<int:month>/<int:day>/<slug:post>/', views.projeto_detalhe, name='projeto_detalhe')
 ]

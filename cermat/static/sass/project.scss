@@ -286,28 +286,62 @@ body {
   }
   //////////////CONTENT////////////////
   .content_container{
-    min-height: 70vh;
+    margin-bottom: 1em;
     display: grid;
+    gap: 20px;
     grid-template-columns: 6em 1fr 1fr 6em;
-    grid-template-rows: 5em 1fr 1fr 5em;
+    //grid-template-rows: 5em 1fr 1fr 5em;
+    grid-auto-rows: min-content;
     *{
-      margin-top: 1.5em;
       //overflow: auto;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
+      h2{
+        padding-bottom: 1em;
+      }
+      li{
+        margin-top: 0.8em;
+        font-size: 1.2em;
+        font-family: "Opens Sans", Verdana, Arial, serif;
+        color: $jet_grey;
+      }
+      p{
+        margin-top: 0.5em;
+      }
     }
     :first-child{
       margin-top: 0;
       grid-column-start: 2;
-      grid-row-start: 1;
+      grid-row-start: 2;
     }
     :nth-child(2){
       grid-column-start: 3;
-      grid-row-start: 1;
+      grid-row-start: 2;
     }
     :nth-child(3){
+      grid-column-start: 3;
+      grid-row-start: 3;
+    }
+    :nth-child(4){
       grid-column-start: 2;
-      grid-row-start: 2;
+      grid-row-start: 3;
+    }
+    :nth-child(5){
+      grid-column-start: 2;
+      grid-row-start: 4;
+    }
+    :nth-child(6){
+      grid-column-start: 3;
+      grid-row-start: 4;
+    }
+    :nth-child(7){
+      grid-column-start: 3;
+      grid-row-start: 5;
+    }
+    :nth-child(8){
+      grid-column-start: 2;
+      grid-row-start: 5;
     }
 
     h2 {
@@ -317,22 +351,45 @@ body {
     p{
       color: $jet_grey;
       margin-right: 10em;
-      font-size: 1em;
+      font-size: 1.2em;
     }
     a{
       text-decoration: none;
     }
   }
-  .content_img{
+  .content_text{
     p{
+      margin: 0 2em 0 2em;
+    }
+  }
+  .content_img{
+    justify-content: center;
+    img{
+      align-self: center;
+    }
+    p{
+      margin-right: auto;
+      margin-left: auto;
       text-align: center;
       font-size: 0.9em;
       justify-self: center;
+      align-self: center;
+      flex-direction: row;
       a{
         text-decoration: none;
+        margin-right: .2em;
+        margin-left: .2em;
       }
     }
   }
+
+    /////////////////////////SCI//////////////////////////////////
+  #sci_projects{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+  }
+
   ////////////////HOMEPAGE/////////////////////////////////////////
   /////////////////////BANNER///////////////
   #banner{
@@ -346,6 +403,14 @@ body {
       margin-top: 100px;
   }
   ////////////////////ABOUT////////////////////////////////////////
+  .about_text{
+    padding-bottom: 1em;
+  }
+  #sala2_img{
+    img{
+      min-width: 40vw;
+    }
+  }
 }
 ///////////////////////GERAL//////////////////////////
 h1 {
@@ -458,16 +523,17 @@ p {
 #sci_img{
   img{
     max-width: 100%;
+    max-height: 50vh;
   }
-
 }
+
 /////////////ABOUT/////////////////////////////////////////////////
 /////////////BANNER////////////
 #about_banner{
   background-image: url(../images/geral/micro/CaulinitaMEV1.png);
 }
 ////////////CONTENT/////////////////////////
-#about_img{
+#team_img{
   img{
     max-width: 100%;
   }
