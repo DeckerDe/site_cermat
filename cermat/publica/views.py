@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.contrib.postgres.search import TrigramSimilarity
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import CreatePublicaForm
+from django.core import serializers
 from django.views.generic.edit import (
     CreateView,
     UpdateView
@@ -71,6 +72,6 @@ def projeto_detalhe(request, year, month, day, project_slug):
     return render(request, 'publica/project_detail.html', {'project': project_slug})
 
 def prod_cient(request):
-    projects = Project.objects.all()
+    projects = list(Project.objects.all().values())
 
     return render(request, 'publica/scientific.html', { 'projects': projects })

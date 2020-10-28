@@ -3,6 +3,7 @@
 
 
 {% block content %}
+<!--{{ projects|json_script:"projects" }} #TODO: Arrumar isso -->
 <div class="wherebar">
   <p><a href="{% url 'home' %}" >Inicio</a></p>
   <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
@@ -50,9 +51,6 @@
   </div>
   <div id="sci_projects">
     <h2>Projetos</h2>
-    {% for project in projects %}
-      <p>{{ project.title }}<p>
-    {% endfor %}
   </div>
 </div>
 
