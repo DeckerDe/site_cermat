@@ -424,6 +424,10 @@ h2 {
   font-family: "Rajdhani","Open Sans", sans-serif;
   text-align: center;
 }
+h3, h4, h5, h6{
+  color: $per_orange;
+  font-family: "Rajdhani","Open Sans", sans-serif;
+}
 p {
   font-family: "Open Sans", sans-serif;
   color: #222222;
@@ -452,7 +456,32 @@ p {
     font-size: 3em;
   }
 }
-////////////////////////PUBLIS/////////////////////////////
+/////////////PUBLICA//////////////////////////////////////////////
+#PubliTitle{
+  text-align: center;
+  font-size: 2.5em;
+  font-family: "Rajdhani","Open Sans", sans-serif;
+  color: $usa_blue;
+  margin: 0.3em;
+
+}
+//////////////////PUBLICA LIST////////////////////////////////
+.list_heading{
+  h3{
+    display: inline-block;
+    font-family: "Rajdhani","Open Sans", sans-serif;
+    color: $space_blue ;
+  }
+
+  span{
+    margin-left: 1em;
+    a{
+      text-decoration: none;
+      color: $usa_blue;
+      font-weight: 600;
+    }
+  }
+}
 .publibox{
   display: flex;
   flex-direction: column;
@@ -465,6 +494,10 @@ p {
 
   *{
     margin-bottom: 0.2em;
+    img{
+      max-height: 20vh;
+      width: auto;
+    }
   }
 
   h2{
@@ -483,15 +516,6 @@ p {
 }
 .pagination{
   color: $space_blue;
-}
-/////////////PUBLICA//////////////////////////////////////////////
-#PubliTitle{
-  text-align: center;
-  font-size: 2.5em;
-  font-family: "Rajdhani","Open Sans", sans-serif;
-  color: $usa_blue;
-  margin: 0.3em;
-
 }
 /////////////////PUBLICA CRIAR//////////////////////////////////
 #div_id_slug{

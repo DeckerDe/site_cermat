@@ -44,6 +44,12 @@ class CreatePublica(LoginRequiredMixin,CreateView):
     model = Publica
     form_class = CreatePublicaForm
 
+class UpdatePublica(LoginRequiredMixin, UpdateView):
+    template_name_suffix  = '_create_form'
+    model = Publica
+    form_class = CreatePublicaForm
+
+
 def lista_projetos(request):
     query =  request.GET.get('busca')
     if query:
@@ -63,13 +69,13 @@ def lista_projetos(request):
     return render(request, 'publica/project_list.html', {'page':page, 'projects':projects})
 
 def projeto_detalhe(request, year, month, day, project_slug):
-    post = get_object_or_404(
+    project = get_object_or_404(
         Project, slug=project_slug,
         start__year = year,
         start__month = month,
         start__day = day
     )
-    return render(request, 'publica/project_detail.html', {'project': project_slug})
+    return render(request, 'publica/project_detail.html', {'project': project})
 
 def prod_cient(request):
     projects = Project.objects.all().order_by('-start')[:10]

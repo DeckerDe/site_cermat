@@ -24,7 +24,11 @@
           <p class="date">
             Publicado em {{ post.publish }} por {{ post.author }}
           </p>
-          {{ post.body| safe | truncatewords:50|linebreaks }}
+          <div class="list_heading">
+            <h3>Projeto:</h3>
+            <span> <a href="{{ post.proj.get_absolute_url }}" >{{ post.proj }}</a></span>
+          </div>
+          {{ post.body|safe|truncatewords_html:30|linebreaks }}
           <h3>
             <a href="{{ post.get_absolute_url }}">Saiba Mais.</a>
           </h3>

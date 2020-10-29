@@ -376,6 +376,11 @@ h2 {
   text-align: center;
 }
 
+h3, h4, h5, h6 {
+  color: #DD8A43;
+  font-family: "Rajdhani","Open Sans", sans-serif;
+}
+
 p {
   font-family: "Open Sans", sans-serif;
   color: #222222;
@@ -406,6 +411,30 @@ p {
   font-size: 3em;
 }
 
+#PubliTitle {
+  text-align: center;
+  font-size: 2.5em;
+  font-family: "Rajdhani","Open Sans", sans-serif;
+  color: #1F5581;
+  margin: 0.3em;
+}
+
+.list_heading h3 {
+  display: inline-block;
+  font-family: "Rajdhani","Open Sans", sans-serif;
+  color: #1B3066;
+}
+
+.list_heading span {
+  margin-left: 1em;
+}
+
+.list_heading span a {
+  text-decoration: none;
+  color: #1F5581;
+  font-weight: 600;
+}
+
 .publibox {
   display: flex;
   flex-direction: column;
@@ -419,6 +448,11 @@ p {
 
 .publicard * {
   margin-bottom: 0.2em;
+}
+
+.publicard * img {
+  max-height: 20vh;
+  width: auto;
 }
 
 .publicard h2 {
@@ -437,14 +471,6 @@ p {
 
 .pagination {
   color: #1B3066;
-}
-
-#PubliTitle {
-  text-align: center;
-  font-size: 2.5em;
-  font-family: "Rajdhani","Open Sans", sans-serif;
-  color: #1F5581;
-  margin: 0.3em;
 }
 
 #div_id_slug div {
