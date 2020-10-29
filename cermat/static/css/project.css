@@ -479,6 +479,16 @@ p {
   max-height: 50vh;
 }
 
+#sci_advisor {
+  color: #1F5581;
+  padding-bottom: 1em;
+}
+
+#sci_advisor a {
+  text-decoration: none;
+  color: #DD8A43;
+}
+
 #about_banner {
   background-image: url(../images/geral/micro/CaulinitaMEV1.png);
 }

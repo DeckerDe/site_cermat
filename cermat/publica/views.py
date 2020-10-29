@@ -72,6 +72,6 @@ def projeto_detalhe(request, year, month, day, project_slug):
     return render(request, 'publica/project_detail.html', {'project': project_slug})
 
 def prod_cient(request):
-    projects = list(Project.objects.all().values())
+    projects = Project.objects.all().order_by('-start')[:10]
 
     return render(request, 'publica/scientific.html', { 'projects': projects })

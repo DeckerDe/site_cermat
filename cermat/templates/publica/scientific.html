@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load publica_tags %}
 
 
 {% block content %}
-<!--{{ projects|json_script:"projects" }} #TODO: Arrumar isso -->
 <div class="wherebar">
   <p><a href="{% url 'home' %}" >Inicio</a></p>
   <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
@@ -50,8 +50,18 @@
     </figure>
   </div>
   <div id="sci_projects">
-    <h2>Projetos</h2>
+    <h2>Projetos mais recentes</h2>
+    <p id="sci_advisor">Esta é apenas uma lista com os projetos mais recentes, por favor acesse nossa <a href="{% url 'publica:lista_projetos' %}">página especial para saber mais.</a></p>
+    <ul>
+      {% for project in projects %}
+      <li>{{project.title}}</li>
+      {% endfor %}
+    </ul>
   </div>
+  <figure class="content_img">
+    <img src="{% static 'images/scient/projects_photo.jpg' %}">
+    <p> Foto por <a href="https://unsplash.com/@thisisengineering?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"> ThisisEngineering RAEng </a> em <a href="https://unsplash.com/s/photos/science?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+  </figure>
 </div>
 
 {% endblock %}
