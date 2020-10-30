@@ -16,7 +16,19 @@
   <p class="date">
     Publicado em {{ post.publish }} por {{ post.author }}
   </p>
-  {{post.body|safe }}
+  <div class="list_heading">
+    <h3>Projeto:</h3>
+    <span> <a href="{{ post.proj.get_absolute_url }}" >{{ post.proj }}</a></span>
+    <h3> Journal:</h3>
+    <span>{{ post.journal }}</span>
+    {% if post.url %}
+    <h3>Url:</h3>
+    <span> <a href="{{ post.url }}" >{{ post.url }}</a></span>
+    {% endif %}
+  </div>
+  <div class="post_body">
+    {{post.body|safe }}
+  </div>
 </div>
 {% endblock %}
 

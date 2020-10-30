@@ -5,15 +5,22 @@
   <div class="wherebar">
     <p><a href="{% url 'home' %}" >Inicio</a></p>
     <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
-    <p><a href="" >Produção Científica</a></p>
+    <p><a href="{% url 'publica:prod_cient' %}" >Produção Científica</a></p>
     <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
     <p>Publicações</p>
   </div>
   <div class="contentContainer">
     <h1 id="PubliTitle"> Publicações </h1>
-    <form id="publiBusca">
-      <input name="busca" type="text" placeholder="Buscar por publicações.">
-    </form>
+    <div class="busca_box">
+      <p> 
+        Nesta página estão todas as nossas publicações. Abaixo você pode realizar uma busca 
+        e mostraremos apenas as publicações que contém o termo inserido. 
+      </p>
+      <form id="publiBusca">
+        <input name="busca" type="text" placeholder="Buscar por publicações.">
+        <button type="submit" class="smallBtn">Buscar</button>
+      </form>
+    </div>
     <div class="publibox">
       {% if posts %}
       {% for post in posts %}
@@ -27,8 +34,14 @@
           <div class="list_heading">
             <h3>Projeto:</h3>
             <span> <a href="{{ post.proj.get_absolute_url }}" >{{ post.proj }}</a></span>
+            <h3> Journal:</h3>
+            <span>{{ post.journal }}</span>
+            {% if post.url %}
+            <h3>Url:</h3>
+            <span> <a href="{{ post.url }}" >{{ post.url }}</a></span>
+            {% endif %}
           </div>
-          {{ post.body|safe|truncatewords_html:30|linebreaks }}
+          {{ post.body|safe|truncatewords_html:30 }}
           <h3>
             <a href="{{ post.get_absolute_url }}">Saiba Mais.</a>
           </h3>

@@ -4,7 +4,7 @@ from .models import Publica, Project
 from django.db.models import Q
 from django.contrib.postgres.search import TrigramSimilarity
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import CreatePublicaForm
+from .forms import CreatePublicaForm, UpdatePublicaForm
 from django.core import serializers
 from django.views.generic.edit import (
     CreateView,
@@ -43,11 +43,14 @@ class CreatePublica(LoginRequiredMixin,CreateView):
     template_name_suffix  = '_create_form'
     model = Publica
     form_class = CreatePublicaForm
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 class UpdatePublica(LoginRequiredMixin, UpdateView):
     template_name_suffix  = '_create_form'
     model = Publica
-    form_class = CreatePublicaForm
+    form_class = UpdatePublicaForm
 
 
 def lista_projetos(request):
