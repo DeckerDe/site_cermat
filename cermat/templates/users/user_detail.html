@@ -14,8 +14,12 @@
   {% if object.name %}
     <p>{{ object.name }}</p>
   {% endif %}
-    <img id="avatar" src="/media/{{object.photo}}">
-    <P>{{object.date_of_birth}}</P>
+  {% if object.photo %}
+  <img id="avatar" src="/media/{{object.photo}}">
+  {% else %}
+  <img id="avatar" src="{% static 'images/geral/blank_profile.png' %}">
+  {% endif %}
+  <P>{{object.date_of_birth}}</P>
 
 
   {% if object == request.user %}
