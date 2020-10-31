@@ -1,9 +1,17 @@
 from django.contrib.auth import get_user_model, forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django.forms import ModelForm
 
 User = get_user_model()
 
+
+class UserUpdateForm(ModelForm):
+    class Meta:
+        model = User
+        fields = [
+        "name", "photo", "researchgate", "linkedin", "lattes"
+        ]
 
 class UserChangeForm(forms.UserChangeForm):
     class Meta(forms.UserChangeForm.Meta):

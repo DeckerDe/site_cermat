@@ -1,11 +1,13 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
+from .forms import UserUpdateForm
 from django.views.generic import (
     DetailView,
     RedirectView,
     UpdateView,
 )
+from cermat.publica.models import Publica
 
 User = get_user_model()
 
@@ -16,22 +18,19 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     #   Lookups by Username
     slug_field = "username"
     slug_url_kwarg = "username"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['publicas'] = Publica.objects.filter(author=self.request.user.id)
+        return context
 
 
 user_detail_view = UserDetailView.as_view()
 
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
-    fields = [
-        "name", "photo", "date_of_birth"
-    ]
-
-    # We already imported user in the View code above,
-    #   remember?
+    form_class = UserUpdateForm
     model = User
 
-    # Send the User Back to Their Own Page after a
-    #   successful Update
     def get_success_url(self):
         return reverse(
             "users:detail",

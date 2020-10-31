@@ -392,9 +392,28 @@ p {
   margin-bottom: .4em;
 }
 
-#avatar {
+#avatar_photo {
   width: 150px;
   align-self: center;
+}
+
+#avatar {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.social {
+  align-items: flex-start;
+  justify-items: flex-start;
+}
+
+.social_icon {
+  width: 4em;
+  fill: #1F5581;
+}
+
+#action_buttons a {
+  margin-bottom: 0.5em;
 }
 
 .banner_pag {

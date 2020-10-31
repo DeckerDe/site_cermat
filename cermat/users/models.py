@@ -10,10 +10,12 @@ class User(AbstractUser):
     # First Name and Last Name Do Not Cover Name Patterns
     # Around the Globe.
     name = models.CharField(
-        _("Name of User"), blank=True, max_length=255
+        "Nome de usuário", blank=True, max_length=255
     )
-    date_of_birth = models.DateField(blank=True, null=True)
-    photo = models.ImageField(upload_to='usersphotos', blank=True)
+    photo = models.ImageField("Foto de perfil", upload_to='usersphotos', blank=True)
+    researchgate = models.URLField(blank=True)
+    linkedin =  models.URLField(blank=True)
+    lattes = models.URLField(blank=True)
 
     def get_absolute_url(self):
         return reverse(

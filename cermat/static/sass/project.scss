@@ -437,11 +437,30 @@ p {
   color: $jet_grey;
   margin-bottom: .4em;
 }
-/////////////////////AVATAR////////////////////////
-#avatar{
+/////////////////////PROFILE PAGE////////////////////////
+#avatar_photo{
   width: 150px;
   align-self: center;
+}
+#avatar{
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+#user_name{
 
+}
+.social{
+  align-items: flex-start;
+  justify-items: flex-start;
+}
+.social_icon{
+  width: 4em;
+  fill: $usa_blue;
+}
+#action_buttons{
+  a{
+    margin-bottom: 0.5em;
+  }
 }
 //////////////////////BANNER///////////////////////////
 .banner_pag{
