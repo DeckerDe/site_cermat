@@ -211,6 +211,7 @@ body {
       align-items: center;
       padding-bottom: 2em;
       background-color: $white;
+      z-index: 100;
   }
   //////////////NAVBAR/////////////////
   .nav-links{
@@ -411,6 +412,21 @@ body {
       min-width: 40vw;
     }
   }
+  //////////////////////PROFILE PAGE///////////////////
+  #avatar{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    p{
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .social .social_link p{
+      margin-left: 0;
+    }
+  }
+  .content_container .publica_items p{
+    margin-right: 0.5em;
+  }
 }
 ///////////////////////GERAL//////////////////////////
 h1 {
@@ -442,24 +458,75 @@ p {
   width: 150px;
   align-self: center;
 }
-#avatar{
-  grid-column-start: 2;
-  grid-row-start: 2;
-}
-#user_name{
-
-}
 .social{
-  align-items: flex-start;
-  justify-items: flex-start;
+  align-items: center;
+  justify-items: center;
+}
+.social_link{
+  min-width: 17em;
+  padding-bottom: 1em;
+  flex-direction: row;
+  align-content: center;
+  svg{
+    margin-right: 1em;
+  }
+  p{
+    display: inline;
+
+  }
 }
 .social_icon{
   width: 4em;
   fill: $usa_blue;
 }
 #action_buttons{
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
   a{
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+}
+#publica_ger{
+  h3{
+    margin-bottom: 1em;
+  }
+  .publica_items{
+    //border: solid black 1px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    box-shadow: 1px 1px 4px $jet_grey;
+    margin: 0 0.5em 0.5em 0.5em;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    p{
+      a,a:link, a:visited{
+        text-decoration: none;
+        color: $jet_grey;
+      }
+    }
+
+    *{
+      //padding: 0.5em;
+      padding-left: 0.5em;
+    }
+
+    .publica_buttons{
+      margin-top: 0.5em;
+      display: flex;
+      flex-direction: row;
+      a{
+        align-self: flex-end;
+        justify-self: flex-end;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-right: 0.5em;
+      }
+    }
   }
 }
 //////////////////////BANNER///////////////////////////

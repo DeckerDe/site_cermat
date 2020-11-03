@@ -179,6 +179,7 @@ body {
     align-items: center;
     padding-bottom: 2em;
     background-color: #FFF;
+    z-index: 100;
   }
   .nav-links {
     margin-right: 100px;
@@ -362,6 +363,20 @@ body {
   #sala2_img img {
     min-width: 40vw;
   }
+  #avatar {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+  #avatar p {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #avatar .social .social_link p {
+    margin-left: 0;
+  }
+  .content_container .publica_items p {
+    margin-right: 0.5em;
+  }
 }
 
 h1 {
@@ -397,14 +412,24 @@ p {
   align-self: center;
 }
 
-#avatar {
-  grid-column-start: 2;
-  grid-row-start: 2;
+.social {
+  align-items: center;
+  justify-items: center;
 }
 
-.social {
-  align-items: flex-start;
-  justify-items: flex-start;
+.social_link {
+  min-width: 17em;
+  padding-bottom: 1em;
+  flex-direction: row;
+  align-content: center;
+}
+
+.social_link svg {
+  margin-right: 1em;
+}
+
+.social_link p {
+  display: inline;
 }
 
 .social_icon {
@@ -412,8 +437,52 @@ p {
   fill: #1F5581;
 }
 
+#action_buttons {
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+
 #action_buttons a {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+#publica_ger h3 {
+  margin-bottom: 1em;
+}
+
+#publica_ger .publica_items {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  box-shadow: 1px 1px 4px #333;
+  margin: 0 0.5em 0.5em 0.5em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#publica_ger .publica_items p a, #publica_ger .publica_items p a:link, #publica_ger .publica_items p a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+#publica_ger .publica_items * {
+  padding-left: 0.5em;
+}
+
+#publica_ger .publica_items .publica_buttons {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+}
+
+#publica_ger .publica_items .publica_buttons a {
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-right: 0.5em;
 }
 
 .banner_pag {
