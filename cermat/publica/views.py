@@ -61,11 +61,10 @@ class UpdatePublica(LoginRequiredMixin, UpdateView):
     model = Publica
     form_class = UpdatePublicaForm
 
-def delete_publica(request, publica_slug=None):
-    publica_to_delete = Publica.objects.get(slug=publica_slug)
+def delete_publica(request, publica_id=None):
+    publica_to_delete = Publica.objects.get(id=publica_id)
     publica_to_delete.delete()
-    user_url = 'users/' + request.user.username + '/'
-    return redirect()
+    return redirect('users:detail', username=request.user.username)
 
 def lista_projetos(request):
     query =  request.GET.get('busca')

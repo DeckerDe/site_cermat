@@ -12,7 +12,7 @@ from cermat.publica.models import Publica
 User = get_user_model()
 
 
-class UserDetailView(LoginRequiredMixin, DetailView):
+class UserDetailView(DetailView):
     model = User
     # These Next Two Lines Tell the View to Index
     #   Lookups by Username

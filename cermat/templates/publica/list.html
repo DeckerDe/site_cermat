@@ -29,7 +29,7 @@
             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
           </h2>
           <p class="date">
-            Publicado em {{ post.publish }} por {{ post.author }}
+            Publicado em {{ post.publish }} por <a href="{% url 'users:detail' post.author %}" >{{ post.author }}</a>
           </p>
           <div class="list_heading">
             <h3>Projeto:</h3>

@@ -9,12 +9,12 @@
   <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
   <p><a href="{% url 'publica:lista_publica' %}">Publicações</a></p>
   <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
-  <p>{{post.title}}</p>
+  <p>{{post.title|truncatewords:10}}</p>
 </div>
 <div class="contentContainer">
   <h1>{{ post.title }}</h1>
   <p class="date">
-    Publicado em {{ post.publish }} por {{ post.author }}
+    Publicado em {{ post.publish }} por <a href="{% url 'users:detail' post.author %}" >{{ post.author }}</a>
   </p>
   <div class="list_heading">
     <h3>Projeto:</h3>

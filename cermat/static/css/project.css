@@ -407,6 +407,12 @@ p {
   margin-bottom: .4em;
 }
 
+.date a {
+  text-decoration: none;
+  color: #1F5581;
+  font-size: 1.2em;
+}
+
 #avatar_photo {
   width: 150px;
   align-self: center;
@@ -469,12 +475,13 @@ p {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  min-height: 5em;
+  min-height: 7em;
 }
 
 #publica_ger .publica_all_items .publica_items p a, #publica_ger .publica_all_items .publica_items p a:link, #publica_ger .publica_all_items .publica_items p a:visited {
   text-decoration: none;
   color: #333;
+  max-height: 1.3em;
 }
 
 #publica_ger .publica_all_items .publica_items * {
@@ -501,9 +508,13 @@ p {
   padding-bottom: 0.5em;
   box-shadow: 1px 1px 4px #333;
   margin: 0.5em;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  min-height: 4.5em;
+  display: block;
+}
+
+#publica_ger .publica_all_items .publica_items_fora p {
+  width: 100%;
+  padding-right: 0.5em;
 }
 
 #publica_ger .publica_all_items .publica_items_fora p a, #publica_ger .publica_all_items .publica_items_fora p a:link, #publica_ger .publica_all_items .publica_items_fora p a:visited {

@@ -64,7 +64,7 @@
       <div class="publica_all_items">
         {% for publica in publicas %}
         <div class="publica_items">
-          <p><a href="{{ publica.get_absolute_url }}" >{{publica.title}}</a></p>
+          <p><a href="{{ publica.get_absolute_url }}" >{{publica.title|truncatewords:10}}</a></p>
           <div class="publica_buttons">
             <a class="smallBtn" href="{{ publica.get_edit_url }}" >Editar</a>
             <a class="smallBtn" href="{% url 'publica:deletar_publica' publica.id %}" >Deletar</a>
@@ -77,7 +77,7 @@
       <div class="publica_all_items">
         {% for publica in publicas %}
         <div class="publica_items_fora">
-          <p><a href="{{ publica.get_absolute_url }}" >{{publica.title}}</a></p>
+          <p><a href="{{ publica.get_absolute_url }}" >{{publica.title|truncatewords:10}}</a></p>
         </div>
         {% endfor %}
       </div>
