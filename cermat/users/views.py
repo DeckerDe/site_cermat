@@ -18,6 +18,7 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     #   Lookups by Username
     slug_field = "username"
     slug_url_kwarg = "username"
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['publicas'] = Publica.objects.filter(author=self.request.user.id)

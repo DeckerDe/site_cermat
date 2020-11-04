@@ -21,9 +21,10 @@
     <img id="avatar_photo" src="{% static 'images/geral/blank_profile.png' %}">
     {% endif %}
     {% if object == request.user %}
-<!-- Action buttons -->
+    <!-- Action buttons -->
     <div id="action_buttons">
       <a class="smallBtn profBtn" href="{% url 'users:update' %}" role="button">Atualizar perfil</a>
+      <a class="smallBtn profBtn" href="{% url 'publica:criar_publica' %}" role="button">Criar Publicação</a>
       <a class="smallBtn profBtn" href="{% url 'account_email' %}" role="button">E-Mail</a>
     </div>
     <!-- Your Stuff: Custom user template urls -->
@@ -60,25 +61,29 @@
   <div id="publica_ger">
     {% if object == request.user %}
       <h3>Gerenciador de publicações</h3>
-      {% for publica in publicas %}
-      <div class="publica_items">
-        <p><a href="{{ publica.get_absolute_url }}" >{{publica.title}}</a></p>
-        <div class="publica_buttons">
-          <a class="smallBtn" href="{{ publica.get_absolute_url }}" >Editar</a>
-          <a class="smallBtn" >Deletar</a>
+      <div class="publica_all_items">
+        {% for publica in publicas %}
+        <div class="publica_items">
+          <p><a href="{{ publica.get_absolute_url }}" >{{publica.title}}</a></p>
+          <div class="publica_buttons">
+            <a class="smallBtn" href="{{ publica.get_edit_url }}" >Editar</a>
+            <a class="smallBtn" href="{% url 'publica:deletar_publica' publica.id %}" >Deletar</a>
+          </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     {% else %}
       <h3>Publicações</h3>
-      {% for publica in publicas %}
-      <div class="publica_items">
-        <p><a href="{{ publica.get_absolute_url }}" >{{publica.title}}</a></p>
+      <div class="publica_all_items">
+        {% for publica in publicas %}
+        <div class="publica_items_fora">
+          <p><a href="{{ publica.get_absolute_url }}" >{{publica.title}}</a></p>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}  
     {% endif %}
   </div>
-
+</div>
 <!-- End Action buttons -->
 
 {% endblock content %}

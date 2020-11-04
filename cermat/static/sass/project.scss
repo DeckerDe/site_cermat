@@ -478,6 +478,9 @@ p {
 .social_icon{
   width: 4em;
   fill: $usa_blue;
+  path{
+    fill: $usa_blue;
+  }
 }
 #action_buttons{
   flex-direction: row;
@@ -492,39 +495,69 @@ p {
   h3{
     margin-bottom: 1em;
   }
-  .publica_items{
-    //border: solid black 1px;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    box-shadow: 1px 1px 4px $jet_grey;
-    margin: 0 0.5em 0.5em 0.5em;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  .publica_all_items{
+    max-height: 30em;
+    overflow: auto;
 
-    p{
-      a,a:link, a:visited{
-        text-decoration: none;
-        color: $jet_grey;
-      }
-    }
-
-    *{
-      //padding: 0.5em;
-      padding-left: 0.5em;
-    }
-
-    .publica_buttons{
-      margin-top: 0.5em;
+    .publica_items{
+      //border: solid black 1px;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      box-shadow: 1px 1px 4px $jet_grey;
+      margin: 0.5em;
+  
       display: flex;
-      flex-direction: row;
-      a{
-        align-self: flex-end;
-        justify-self: flex-end;
-        margin-top: auto;
-        margin-bottom: auto;
-        padding-right: 0.5em;
+      flex-direction: column;
+      flex-wrap: wrap;
+      min-height: 5em;
+  
+      p{
+        a,a:link, a:visited{
+          text-decoration: none;
+          color: $jet_grey;
+        }
+      }
+  
+      *{
+        //padding: 0.5em;
+        padding-left: 0.5em;
+      }
+  
+      .publica_buttons{
+        margin-top: 0.5em;
+        display: flex;
+        flex-direction: row;
+        a{
+          align-self: flex-end;
+          justify-self: flex-end;
+          margin-top: auto;
+          margin-bottom: auto;
+          padding-right: 0.5em;
+        }
+      }  
+    }
+    .publica_items_fora{
+      border: solid black 1px;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      box-shadow: 1px 1px 4px $jet_grey;
+      margin: 0.5em;
+  
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+  
+      p{
+        a,a:link, a:visited{
+          text-decoration: none;
+          color: $jet_grey;
+        }
+      }
+  
+      *{
+        //padding: 0.5em;
+        padding-left: 0.5em;
       }
     }
   }

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Publica, Project
 from django.db.models import Q
@@ -10,7 +10,7 @@ from django.views.generic.edit import (
     CreateView,
     UpdateView
 )
-
+import pdb
 
 def post_list(request):
     query =  request.GET.get('busca')
@@ -43,15 +43,29 @@ class CreatePublica(LoginRequiredMixin,CreateView):
     template_name_suffix  = '_create_form'
     model = Publica
     form_class = CreatePublicaForm
-    def form_valid(self, form):
+    def form_valid(self, form):    
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
+    def get_success_url(self):
+        created = self.request.POST.get('created')
+        status = self.request.POST.get('status')
+        if status == "rascunho":
+            return reverse('users:detail', args=[self.request.user.username])
+        else:
+            return self.object.get_absolute_url()
+  
 
 class UpdatePublica(LoginRequiredMixin, UpdateView):
     template_name_suffix  = '_create_form'
     model = Publica
     form_class = UpdatePublicaForm
 
+def delete_publica(request, publica_slug=None):
+    publica_to_delete = Publica.objects.get(slug=publica_slug)
+    publica_to_delete.delete()
+    user_url = 'users/' + request.user.username + '/'
+    return redirect()
 
 def lista_projetos(request):
     query =  request.GET.get('busca')

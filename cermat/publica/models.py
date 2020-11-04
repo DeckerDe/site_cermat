@@ -72,6 +72,10 @@ class Publica(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_edit_url(self):
+        return reverse('publica:editar_publica',
+        args=[self.slug])
 
     def get_absolute_url(self):
         return reverse(

@@ -437,6 +437,10 @@ p {
   fill: #1F5581;
 }
 
+.social_icon path {
+  fill: #1F5581;
+}
+
 #action_buttons {
   flex-direction: row;
   justify-content: center;
@@ -452,37 +456,63 @@ p {
   margin-bottom: 1em;
 }
 
-#publica_ger .publica_items {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+#publica_ger .publica_all_items {
+  max-height: 30em;
+  overflow: auto;
+}
+
+#publica_ger .publica_all_items .publica_items {
+  padding-top: 1em;
+  padding-bottom: 1em;
   box-shadow: 1px 1px 4px #333;
-  margin: 0 0.5em 0.5em 0.5em;
+  margin: 0.5em;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  min-height: 5em;
 }
 
-#publica_ger .publica_items p a, #publica_ger .publica_items p a:link, #publica_ger .publica_items p a:visited {
+#publica_ger .publica_all_items .publica_items p a, #publica_ger .publica_all_items .publica_items p a:link, #publica_ger .publica_all_items .publica_items p a:visited {
   text-decoration: none;
   color: #333;
 }
 
-#publica_ger .publica_items * {
+#publica_ger .publica_all_items .publica_items * {
   padding-left: 0.5em;
 }
 
-#publica_ger .publica_items .publica_buttons {
+#publica_ger .publica_all_items .publica_items .publica_buttons {
   margin-top: 0.5em;
   display: flex;
   flex-direction: row;
 }
 
-#publica_ger .publica_items .publica_buttons a {
+#publica_ger .publica_all_items .publica_items .publica_buttons a {
   align-self: flex-end;
   justify-self: flex-end;
   margin-top: auto;
   margin-bottom: auto;
   padding-right: 0.5em;
+}
+
+#publica_ger .publica_all_items .publica_items_fora {
+  border: solid black 1px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  box-shadow: 1px 1px 4px #333;
+  margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#publica_ger .publica_all_items .publica_items_fora p a, #publica_ger .publica_all_items .publica_items_fora p a:link, #publica_ger .publica_all_items .publica_items_fora p a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+#publica_ger .publica_all_items .publica_items_fora * {
+  padding-left: 0.5em;
 }
 
 .banner_pag {
