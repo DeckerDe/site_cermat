@@ -8,6 +8,7 @@ from django.views.generic import (
     UpdateView,
 )
 from cermat.publica.models import Publica
+import pdb
 
 User = get_user_model()
 
@@ -21,7 +22,9 @@ class UserDetailView(DetailView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['publicas'] = Publica.objects.filter(author=self.request.user.id)
+        slug = self.kwargs.get(self.slug_url_kwarg)
+        author_id = User.objects.get(username=slug).id
+        context['publicas'] = Publica.objects.filter(author=author_id)
         return context
 
 
