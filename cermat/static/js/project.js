@@ -4,7 +4,8 @@ const app = Vue.createApp({
         return{
             showNav: false,
             teste: "Tenho acesso",
-            projects: null
+            projects: null,
+            showModal: false,
         }
     },
     methods:{

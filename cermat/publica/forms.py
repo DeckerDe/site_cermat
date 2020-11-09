@@ -1,4 +1,4 @@
-from .models import Publica
+from .models import Publica, Author, Organization
 from django.forms import ModelForm
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django import forms
@@ -29,4 +29,16 @@ class UpdatePublicaForm(ModelForm):
             'journal':'journal',
             'url':'Url',
             'body': 'Descrição',
+        }
+
+class CreateAuthorForm(ModelForm):
+    class Meta:
+        model = Author
+        fields = {'name', 'organization', 'researchgate', 'linkedin', 'lattes'}
+        labels = {
+            'name': 'Nome',
+            'organization': 'Organização',
+            'researchgate': 'Researchgate',
+            'linkedin': 'Linkedin',
+            'lattes': 'Lattes'
         }

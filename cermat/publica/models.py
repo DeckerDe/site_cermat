@@ -83,5 +83,18 @@ class Publica(models.Model):
             args=[self.publish.year, self.publish.month, self.publish.day, self.slug])
 
 
+class Organization(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    url = models.URLField(blank=True)
+
+    
+class Author(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    organization = models.ForeignKey(Organization, on_delete=models.PROTECT, default='11000')
+    researchgate = models.URLField(blank=True)
+    linkedin = models.URLField(blank=True)
+    lattes = models.URLField(blank=True)
+
+
 
 

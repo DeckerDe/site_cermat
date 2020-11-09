@@ -12,5 +12,9 @@ urlpatterns =[
     path('deletar_publica/<publica_id>/', views.delete_publica, name='deletar_publica'),
     path('projetos/', views.lista_projetos, name='lista_projetos'),
     path('prod_cient/', views.prod_cient, name='prod_cient'),
-    path('proj/<int:year>/<int:month>/<int:day>/<slug:project_slug>/', views.projeto_detalhe, name='projeto_detalhe')
+    path('proj/<int:year>/<int:month>/<int:day>/<slug:project_slug>/', views.projeto_detalhe, name='projeto_detalhe'),
+    path('criar_autor/', views.CreateAuthor.as_view(), name='criar_autor'),
+    #path('atualizar_autor/', views.update_author, name='atualizar_autor'),
+    #path('deletar_autor/', views.delete_author, name='deletar_autor'),
+
 ]

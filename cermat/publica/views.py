@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Publica, Project
+from .models import Publica, Project, Author, Organization
 from django.db.models import Q
 from django.contrib.postgres.search import TrigramSimilarity
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import CreatePublicaForm, UpdatePublicaForm
+from .forms import CreatePublicaForm, UpdatePublicaForm, CreateAuthorForm
 from django.core import serializers
 from django.views.generic.edit import (
     CreateView,
@@ -54,7 +54,7 @@ class CreatePublica(LoginRequiredMixin,CreateView):
             return reverse('users:detail', args=[self.request.user.username])
         else:
             return self.object.get_absolute_url()
-  
+
 
 class UpdatePublica(LoginRequiredMixin, UpdateView):
     template_name_suffix  = '_create_form'
@@ -97,3 +97,14 @@ def prod_cient(request):
     projects = Project.objects.all().order_by('-start')[:10]
 
     return render(request, 'publica/scientific.html', { 'projects': projects })
+
+
+class CreateAuthor(CreateView):
+    model = Author
+    template_name_suffix  = '_create_form'
+    form_class = CreateAuthorForm
+    
+    
+    
+
+
