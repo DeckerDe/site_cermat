@@ -1,10 +1,10 @@
 /* Project specific Javascript goes here. */
+
 const app = Vue.createApp({
     data(){
         return{
             showNav: false,
             teste: "Tenho acesso",
-            projects: null,
             showModal: false,
         }
     },
