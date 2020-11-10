@@ -1,4 +1,4 @@
-from .models import Publica, Author, Organization
+from .models import Publica, Researcher, Organization
 from django.forms import ModelForm
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django import forms
@@ -6,14 +6,16 @@ from django import forms
 
 class CreatePublicaForm(ModelForm):
 
+    researchers = forms.ModelChoiceField(queryset=Researcher.objects.all(), required=True)
     body = forms.CharField(widget=SummernoteWidget(), label='Descrição')
     class Meta:
         model = Publica
-        fields = ['title', 'proj','journal','url', 'body', 'status']
+        fields = ['title', 'proj','journal','url', 'body', 'status','researchers',]
         labels = {
             'title': 'Título',
+            'researchers': 'Pesquisadores',
             'proj': 'Projeto',
-            'journal':'journal',
+            'journal':'Journal',
             'url':'Url',
             'body': 'Descrição',
         }
@@ -31,9 +33,9 @@ class UpdatePublicaForm(ModelForm):
             'body': 'Descrição',
         }
 
-class CreateAuthorForm(ModelForm):
+class CreateResearcherForm(ModelForm):
     class Meta:
-        model = Author
+        model = Researcher
         fields = {'name', 'organization', 'researchgate', 'linkedin', 'lattes'}
         labels = {
             'name': 'Nome',

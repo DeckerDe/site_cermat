@@ -6,6 +6,18 @@ from django.utils.text import slugify
 
 User = get_user_model()
 
+class Organization(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    url = models.URLField(blank=True)
+
+
+class Researcher(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    organization = models.ForeignKey(Organization, on_delete=models.PROTECT, default='11000')
+    researchgate = models.URLField(blank=True)
+    linkedin = models.URLField(blank=True)
+    lattes = models.URLField(blank=True)
+
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super(PublishedManager,self).get_queryset().filter(status='publicado')
@@ -50,6 +62,7 @@ class Publica(models.Model):
         ('publicado', 'Publicado')
     )
     title = models.CharField(max_length=250, unique=True)
+    researchers = models.ManyToManyField(Researcher)
     proj = models.ForeignKey(Project, on_delete=models.CASCADE, default='11000')
     journal = models.CharField(max_length=250, default='Publicação interna')
     url = models.URLField(blank=True)
@@ -72,7 +85,7 @@ class Publica(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     def get_edit_url(self):
         return reverse('publica:editar_publica',
         args=[self.slug])
@@ -82,18 +95,6 @@ class Publica(models.Model):
             'publica:publica_detalhe',
             args=[self.publish.year, self.publish.month, self.publish.day, self.slug])
 
-
-class Organization(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    url = models.URLField(blank=True)
-
-    
-class Author(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    organization = models.ForeignKey(Organization, on_delete=models.PROTECT, default='11000')
-    researchgate = models.URLField(blank=True)
-    linkedin = models.URLField(blank=True)
-    lattes = models.URLField(blank=True)
 
 
 

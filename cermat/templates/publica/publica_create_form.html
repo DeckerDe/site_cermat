@@ -5,7 +5,22 @@
   <form id="publica_creation" method="POST">
     {% csrf_token %}
     {{ form|crispy }}
+    <button id="show-modal" @click="showModal = true" class="smallBtn" type="button" > Gerenciar pesquisadores </button>
     <input class='smallBtn' type="submit" value="Salvar">
   </form>
+
+  <modal v-if="showModal" @close="showModal = false" >
+    <template v-slot:header>
+      <h3> Pesquisadores </h3>
+    </template>
+    <template v-slot:body>
+      <h4>Lista de pesquisadores</h4>
+    </template>
+    <template v-slot:footer>
+      <div class="modal-footer">
+          <button>Salvar</button>
+          <button>Deletar</button>
+    </template>
+  </modal>
 
 {% endblock %}

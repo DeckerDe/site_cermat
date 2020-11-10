@@ -511,12 +511,12 @@ p {
       padding-bottom: 1em;
       box-shadow: 1px 1px 4px $jet_grey;
       margin: 0.5em;
-  
+
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       min-height: 7em;
-  
+
       p{
         a,a:link, a:visited{
           text-decoration: none;
@@ -524,12 +524,12 @@ p {
           max-height: 1.3em;
         }
       }
-  
+
       *{
         //padding: 0.5em;
         padding-left: 0.5em;
       }
-  
+
       .publica_buttons{
         margin-top: 0.5em;
         display: flex;
@@ -541,7 +541,7 @@ p {
           margin-bottom: auto;
           padding-right: 0.5em;
         }
-      }  
+      }
     }
     .publica_items_fora{
       border: solid black 1px;
@@ -550,9 +550,9 @@ p {
       box-shadow: 1px 1px 4px $jet_grey;
       margin: 0.5em;
       min-height: 4.5em;
-  
+
       display: block;
-  
+
       p{
         width: 100%;
         padding-right: 0.5em;
@@ -561,7 +561,7 @@ p {
           color: $jet_grey;
         }
       }
-  
+
       *{
         //padding: 0.5em;
         padding-left: 0.5em;
@@ -696,6 +696,9 @@ h1{
   flex-direction: column;
   *{
     text-align: center;
+  }
+  button{
+    align-self: center;
   }
   input{
     align-self: center;

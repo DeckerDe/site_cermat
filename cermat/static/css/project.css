@@ -662,6 +662,10 @@ h1 {
   text-align: center;
 }
 
+#publica_creation button {
+  align-self: center;
+}
+
 #publica_creation input {
   align-self: center;
 }
