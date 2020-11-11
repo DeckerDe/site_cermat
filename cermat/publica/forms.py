@@ -1,4 +1,4 @@
-from .models import Publica, Researcher, Organization
+from .models import Publica, Researcher
 from django.forms import ModelForm
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django import forms
@@ -13,11 +13,11 @@ class CreatePublicaForm(ModelForm):
         fields = ['title', 'proj','journal','url', 'body', 'status','researchers',]
         labels = {
             'title': 'Título',
-            'researchers': 'Pesquisadores',
             'proj': 'Projeto',
             'journal':'Journal',
             'url':'Url',
             'body': 'Descrição',
+            'researchers': 'Pesquisadores',
         }
 
 class UpdatePublicaForm(ModelForm):

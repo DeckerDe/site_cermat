@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Publica, Project, Researcher, Organization
+from .models import Publica, Project, Researcher
 from django.db.models import Q
 from django.contrib.postgres.search import TrigramSimilarity
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from .forms import CreatePublicaForm, UpdatePublicaForm, CreateResearcherForm
 from django.core import serializers
 from django.views.generic.edit import (
@@ -43,6 +44,7 @@ class CreatePublica(LoginRequiredMixin,CreateView):
     template_name_suffix  = '_create_form'
     model = Publica
     form_class = CreatePublicaForm
+
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
@@ -99,11 +101,17 @@ def prod_cient(request):
     return render(request, 'publica/scientific.html', { 'projects': projects })
 
 
-class CreateResearcher(CreateView):
-    model = Researcher
-    template_name_suffix  = '_create_form'
-    form_class = CreateResearcherForm
 
+def manage_researcher(request):
+    context = {}
+
+    researchers = Researcher.objects.all()
+
+    form = CreateResearcherForm
+
+    context['form'] = form
+    context['researchers'] = researchers
+    return render(request, "publica/manage_researchers.html", context)
 
 
 

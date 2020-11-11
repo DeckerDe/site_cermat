@@ -2,7 +2,10 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <form id="publica_creation" method="POST">
+  {% for researcher in researchers %}
+    <p>{{ researcher.name }}</p>
+  {% endfor %}
+  <form id="pesq_form" method="POST">
     {% csrf_token %}
     {{ form|crispy }}
     <input class='smallBtn' type="submit" value="Salvar">

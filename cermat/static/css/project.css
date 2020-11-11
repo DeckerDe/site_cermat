@@ -448,13 +448,12 @@ p {
 }
 
 #action_buttons {
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: stretch;
 }
 
 #action_buttons a {
-  margin-bottom: 1em;
   margin-top: 1em;
 }
 
@@ -849,7 +848,7 @@ footer :last-child {
 }
 
 .modal-container {
-  width: 300px;
+  width: 80vw;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;

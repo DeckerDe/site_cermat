@@ -6,17 +6,14 @@ from django.utils.text import slugify
 
 User = get_user_model()
 
-class Organization(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    url = models.URLField(blank=True)
-
-
 class Researcher(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    organization = models.ForeignKey(Organization, on_delete=models.PROTECT, default='11000')
+    organization = models.CharField(max_length=255)
     researchgate = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
     lattes = models.URLField(blank=True)
+
+    unique_together = ['name', 'organization']
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
