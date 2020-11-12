@@ -427,8 +427,32 @@ body {
   .content_container .publica_items p{
     margin-right: 0.5em;
   }
+  /////////////////////////RESEARCHERS MANAG//////////////////////////
+  #researchers_box{
+    justify-self: center;
+    *{
+      margin-top: 0.5em;
+    }
+
+    .researcher_item{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      p{
+        font-size: 1em;
+        margin-right: auto;
+      }
+      button{
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 00.5em;
+      }
+    }
+  }
+
 }
-///////////////////////GERAL//////////////////////////
+///////////////////////GERAL////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 h1 {
   color: $usa_blue;
   font-family: "Rajdhani","Open Sans", sans-serif;

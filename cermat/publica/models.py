@@ -9,6 +9,7 @@ User = get_user_model()
 class Researcher(models.Model):
     name = models.CharField(max_length=255, unique=True)
     organization = models.CharField(max_length=255)
+    organization_abre = models.CharField(max_length=50, blank=True)
     researchgate = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
     lattes = models.URLField(blank=True)

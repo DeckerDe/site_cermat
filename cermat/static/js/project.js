@@ -6,6 +6,8 @@ const app = Vue.createApp({
             showNav: false,
             teste: "Tenho acesso",
             showModal: false,
+            researcherId: 0,
+
         }
     },
     methods:{
@@ -15,6 +17,11 @@ const app = Vue.createApp({
             }
             else this.showNav = true;
         },
+        researcherModal(researcher_id){
+            this.showModal = true;
+            this.researcherId = researcher_id;
+            console.log(researcher_id)
+        }
     },
     delimiters: ['[[', ']]'],
 })

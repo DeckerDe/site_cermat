@@ -377,6 +377,26 @@ body {
   .content_container .publica_items p {
     margin-right: 0.5em;
   }
+  #researchers_box {
+    justify-self: center;
+  }
+  #researchers_box * {
+    margin-top: 0.5em;
+  }
+  #researchers_box .researcher_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  #researchers_box .researcher_item p {
+    font-size: 1em;
+    margin-right: auto;
+  }
+  #researchers_box .researcher_item button {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 00.5em;
+  }
 }
 
 h1 {

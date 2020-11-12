@@ -36,10 +36,11 @@ class UpdatePublicaForm(ModelForm):
 class CreateResearcherForm(ModelForm):
     class Meta:
         model = Researcher
-        fields = {'name', 'organization', 'researchgate', 'linkedin', 'lattes'}
+        fields = {'name', 'organization', 'organization_abre', 'researchgate', 'linkedin', 'lattes'}
         labels = {
             'name': 'Nome',
             'organization': 'Organização',
+            'organization_abre': 'Sigla da organização',
             'researchgate': 'Researchgate',
             'linkedin': 'Linkedin',
             'lattes': 'Lattes'

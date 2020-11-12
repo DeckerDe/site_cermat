@@ -2,12 +2,28 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  {% for researcher in researchers %}
-    <p>{{ researcher.name }}</p>
-  {% endfor %}
-  <form id="pesq_form" method="POST">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <input class='smallBtn' type="submit" value="Salvar">
-  </form>
+  <div class="content_container">
+    <div id="researchers_box">
+      {% for researcher in researchers %}
+      <div class="researcher_item">
+        <p>{{ researcher.name | truncatewords:6 }}</p>
+        <button class="smallBtn" @click="researcherModal({{researcher.id}})" >Detalhes</button>
+        <button class="smallBtn">Editar</button>
+      </div>
+      {% endfor %}
+    </div>
+    <div id="edit_researchers">
+      <form id="pesq_form" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class='smallBtn' type="submit" value="Salvar">
+      </form>
+    </div>
+  </div>
+
+  <researchModal v-if="showModal" @close="showModal = false" :researcherId:"researcherId">
+    <template v-slot:header>
+      <h3>{{ researchers.1.name }}</h3>
+    </template>
+  </researchModal>
 {% endblock %}
