@@ -15,7 +15,7 @@
     <div id="edit_researchers">
       <form id="pesq_form" method="POST">
         {% csrf_token %}
-        {{ form|crispy }}
+        {{ form | crispy }}
         <input class='smallBtn' type="submit" value="Salvar">
       </form>
     </div>

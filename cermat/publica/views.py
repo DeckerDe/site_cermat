@@ -108,12 +108,12 @@ def manage_researcher(request):
     researchers = Researcher.objects.all()
 
     if request.method == "GET":
-        form = CreateResearcherForm(None)
+        form = CreateResearcherForm()
     if request.method == "POST":
         form = CreateResearcherForm(request.POST)
         if form.is_valid():
             form.save()
-            form = CreateResearcherForm(None)
+            form = CreateResearcherForm()
 
 
     context['form'] = form

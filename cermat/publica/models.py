@@ -14,8 +14,6 @@ class Researcher(models.Model):
     linkedin = models.URLField(blank=True)
     lattes = models.URLField(blank=True)
 
-    unique_together = ['name', 'organization']
-
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super(PublishedManager,self).get_queryset().filter(status='publicado')
