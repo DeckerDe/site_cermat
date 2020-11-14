@@ -6,7 +6,7 @@ const app = Vue.createApp({
             showNav: false,
             teste: "Tenho acesso",
             showModal: false,
-            researcherId: 0,
+            researcher_id: 0,
 
         }
     },
@@ -19,7 +19,7 @@ const app = Vue.createApp({
         },
         researcherModal(researcher_id){
             this.showModal = true;
-            this.researcherId = researcher_id;
+            this.researcher_id = researcher_id;
             console.log(researcher_id)
         }
     },

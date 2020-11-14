@@ -413,10 +413,14 @@ body {
     *{
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
   }
   //////////////////////PROFILE PAGE///////////////////
   #avatar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-column-start: 2;
     grid-row-start: 2;
     p{
@@ -526,6 +530,7 @@ p {
   }
 }
 #action_buttons{
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;

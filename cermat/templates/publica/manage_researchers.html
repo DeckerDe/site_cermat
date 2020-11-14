@@ -21,9 +21,10 @@
     </div>
   </div>
 
-  <researchModal v-if="showModal" @close="showModal = false" :researcherId:"researcherId">
+  <researchModal :researcher_id="researcher_id" v-if="showModal" @close="showModal = false">
     <template v-slot:header>
-      <h3>{{ researchers.1.name }}</h3>
+      <h3>{{ researchers.researcher_id.name }}</h3>
+      <p>[[researcher_id]]</p>
     </template>
   </researchModal>
 {% endblock %}

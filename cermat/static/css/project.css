@@ -364,8 +364,12 @@ body {
   #about_content * {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
   #avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-column-start: 2;
     grid-row-start: 2;
   }
@@ -479,6 +483,7 @@ p {
 }
 
 #action_buttons {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;

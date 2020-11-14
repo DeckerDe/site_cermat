@@ -1,6 +1,6 @@
-app.component('researchModal', {
+app.component('researchmodal', {
     props:{
-      researcherId:{
+      researcher_id:{
         type: Number,
         required: true,
       }
