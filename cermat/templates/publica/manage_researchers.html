@@ -6,7 +6,7 @@
     <div id="researchers_box">
       {% for researcher in researchers %}
       <div class="researcher_item">
-        <p>{{ researcher.name | truncatewords:6 }}</p>
+        <p>{{ researcher.name | capfirst | truncatewords:6 }}</p>
         <button class="smallBtn" @click="researcherModal({{researcher.id}})" >Detalhes</button>
         <button class="smallBtn">Editar</button>
       </div>
@@ -20,6 +20,10 @@
       </form>
     </div>
   </div>
+  {{researchers_list|json_script:"researchers_list"}}
+  <script>
+    const researchers_list = JSON.parse(document.getElementById('researchers_list').textContent);
+  </script>
 
   <researchModal :researcher_id="researcher_id" v-if="showModal" @close="showModal = false">
     <template v-slot:header>

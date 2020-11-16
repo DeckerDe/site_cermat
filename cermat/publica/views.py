@@ -106,6 +106,7 @@ def manage_researcher(request):
     context = {}
 
     researchers = Researcher.objects.all()
+    researchers_list = list(researchers.values())
 
     if request.method == "GET":
         form = CreateResearcherForm()
@@ -118,6 +119,7 @@ def manage_researcher(request):
 
     context['form'] = form
     context['researchers'] = researchers
+    context['researchers_list'] = researchers_list
     return render(request, "publica/manage_researchers.html", context)
 
 
