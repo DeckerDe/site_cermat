@@ -3,6 +3,10 @@ app.component('researchmodal', {
       researcher_id:{
         type: Number,
         required: true,
+      },
+      researchers_list:{
+        type: Array,
+        required: true
       }
     },
     template:
@@ -14,13 +18,13 @@ app.component('researchmodal', {
 
               <div class="modal-header">
                 <slot name="header">
-                  default header
+                  <h3>{{researcher.name}}</h3>
                 </slot>
               </div>
 
               <div class="modal-body">
                 <slot name="body">
-                  default body
+                  <p> {{researcher.researchgate}} </p>
                 </slot>
               </div>
               <div class="modal-footer">
@@ -39,5 +43,20 @@ app.component('researchmodal', {
           return{
 
           }
+      },
+      computed:{
+        researcher(){
+          function isResearcher(element, index, array){
+            if(element.id === this.researcher_id){
+              return true;
+            }
+            else return false;
+          }
+
+          var res = researchers_list.find(isResearcher, this)
+
+
+          return res
+        }
       }
 })

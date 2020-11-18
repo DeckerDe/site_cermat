@@ -7,6 +7,7 @@ const app = Vue.createApp({
             teste: "Tenho acesso",
             showModal: false,
             researcher_id: 0,
+            researchers_list: [],
 
         }
     },
@@ -20,7 +21,8 @@ const app = Vue.createApp({
         researcherModal(researcher_id){
             this.showModal = true;
             this.researcher_id = researcher_id;
-            console.log(researcher_id)
+            this.researchers_list = researchers_list
+            //console.log(researcher_id)
         }
     },
     delimiters: ['[[', ']]'],

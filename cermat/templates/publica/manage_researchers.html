@@ -25,10 +25,6 @@
     const researchers_list = JSON.parse(document.getElementById('researchers_list').textContent);
   </script>
 
-  <researchModal :researcher_id="researcher_id" v-if="showModal" @close="showModal = false">
-    <template v-slot:header>
-      <h3>{{ researchers.researcher_id.name }}</h3>
-      <p>[[researcher_id]]</p>
-    </template>
+  <researchModal :researcher_id="researcher_id" :researchers_list="researchers_list" v-if="showModal" @close="showModal = false">
   </researchModal>
 {% endblock %}
