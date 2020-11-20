@@ -385,6 +385,10 @@ body {
   }
   #researchers_box {
     justify-self: center;
+    max-height: 24em;
+    overflow: auto;
+    padding: 0.5em 0.5em 1em 1em;
+    width: 100%;
   }
   #researchers_box * {
     margin-top: 0.5em;
@@ -396,9 +400,10 @@ body {
     padding: 0.3em;
     box-shadow: 0 1px 3px #333, 0 1px 2px;
   }
-  #researchers_box .researcher_item p {
+  #researchers_box .researcher_item span {
     font-size: 1em;
     margin-right: auto;
+    cursor: pointer;
   }
   #researchers_box .researcher_item button {
     margin-top: auto;
@@ -802,6 +807,11 @@ form * {
   text-align: center;
 }
 
+.smallBtn a {
+  text-decoration: none;
+  color: #FFF;
+}
+
 .smallBtn:hover {
   background: #1B3066;
   border: solid #FFF 1px;
@@ -886,7 +896,7 @@ footer :last-child {
 }
 
 .modal-container {
-  width: 80vw;
+  width: 70vw;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;

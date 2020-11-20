@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
+<div class="wherebar">
+  <p><a href="{% url 'home' %}" >Inicio</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="{% url 'users:detail' request.user.username %}">Minha Conta</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="{% url 'publica:ger_pesq' %}">Gerenciar Pesquisadores</a></p>
+</div>
   <div class="content_container">
     <div id="researchers_box">
       {% for researcher in researchers %}
-      <div class="researcher_item">
-        <p>{{ researcher.name | capfirst | truncatewords:6 }}</p>
-        <button class="smallBtn" @click="researcherModal({{researcher.id}})" >Detalhes</button>
-        <button class="smallBtn">Editar</button>
+      <div class="researcher_item" >
+        <span @click="researcherModal({{researcher.id}})" >{{ researcher.name | capfirst | truncatewords:6 }}</span>
+        <button class="smallBtn"><a href="{% url 'publica:atualizar_pesq' researcher.id %}" > Editar </a></button>
+        <button class="smallBtn"> <a href="{% url 'publica:deletar_pesq' researcher.id %}">Deletar</a></button>
       </div>
       {% endfor %}
     </div>

@@ -437,6 +437,11 @@ body {
   /////////////////////////RESEARCHERS MANAG//////////////////////////
   #researchers_box{
     justify-self: center;
+    max-height: 24em;
+    overflow: auto;
+    padding: 0.5em 0.5em 1em 1em;
+    width: 100%;
+
     *{
       margin-top: 0.5em;
     }
@@ -448,9 +453,10 @@ body {
       padding: 0.3em;
       box-shadow: 0 1px 3px $jet_grey, 0 1px 2px;
 
-      p{
+      span{
         font-size: 1em;
         margin-right: auto;
+        cursor: pointer;
       }
       button{
         margin-top: auto;
@@ -844,6 +850,10 @@ form {
   display: inline-block;
   cursor: pointer;
   text-align: center;
+  a{
+    text-decoration: none;
+    color: $white;
+  }
 }
 
 .smallBtn:hover {
@@ -936,7 +946,7 @@ footer :last-child{
 }
 
 .modal-container {
-  width: 80vw;
+  width: 70vw;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;

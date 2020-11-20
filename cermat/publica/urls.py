@@ -14,5 +14,7 @@ urlpatterns =[
     path('prod_cient/', views.prod_cient, name='prod_cient'),
     path('proj/<int:year>/<int:month>/<int:day>/<slug:project_slug>/', views.projeto_detalhe, name='projeto_detalhe'),
     path('ger_pesq/', views.manage_researcher, name='ger_pesq'),
+    path('deletar_pesq/<researcher_id>/', views.delete_researcher, name='deletar_pesq'),
+    path('atualizar_pesq/<researcher_id>/', views.update_researcher, name='atualizar_pesq'),
 
 ]

@@ -18,23 +18,31 @@ app.component('researchmodal', {
 
               <div class="modal-header">
                 <slot name="header">
-                  <h3>{{researcher.name}}</h3>
+                  <h2>{{researcher.name}}</h2>
+                  <h4>Organização: {{researcher.organization}}</h4>
+                  <h4>Sigla da Organização: {{researcher.organization_abre}}</h4>
                 </slot>
               </div>
 
               <div class="modal-body">
                 <slot name="body">
-                  <p> {{researcher.researchgate}} </p>
+                  <div class="list_heading">
+                    <h3> researchgate: </h3>
+                    <span>{{researcher.researchgate}}</span>
+                    <h3> Linkedin: </h3>
+                    <span> {{researcher.linkedin}}</span>
+                    <h3> Lattes: </h3>
+                    <span> {{researcher.lattes}}</span>
+                  </div>
                 </slot>
               </div>
               <div class="modal-footer">
                 <slot name="footer">
-                  default footer
+                  <button class="smallBtn" @click="$emit('close')">
+                      OK
+                  </button>
                 </slot>
               </div>
-              <button class="modal-default-button" @click="$emit('close')">
-                    OK
-                </button>
             </div>
           </div>
         </div>
@@ -55,7 +63,12 @@ app.component('researchmodal', {
 
           var res = researchers_list.find(isResearcher, this)
 
+          for(campo in res){
+            if(res[campo] === "" ){
+              res[campo] = "Não cadastrado."
 
+            }
+          }
           return res
         }
       }

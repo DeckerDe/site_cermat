@@ -3,10 +3,18 @@
 
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block head_title %}{% trans "Account" %}{% endblock %}
 
 {% block content %}
+<div class="wherebar">
+  <p><a href="{% url 'home' %}" >Inicio</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="{% url 'users:detail' request.user.username %}">Minha conta</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p>Email</p>
+</div>
 <div id="mailContainer" class="auth_content">
   <h1>{% trans "E-mail Addresses" %}</h1>
 

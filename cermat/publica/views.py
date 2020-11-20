@@ -63,6 +63,8 @@ class UpdatePublica(LoginRequiredMixin, UpdateView):
     model = Publica
     form_class = UpdatePublicaForm
 
+
+@login_required
 def delete_publica(request, publica_id=None):
     publica_to_delete = Publica.objects.get(id=publica_id)
     publica_to_delete.delete()
@@ -101,7 +103,7 @@ def prod_cient(request):
     return render(request, 'publica/scientific.html', { 'projects': projects })
 
 
-
+@login_required
 def manage_researcher(request):
     context = {}
 
@@ -115,12 +117,42 @@ def manage_researcher(request):
         if form.is_valid():
             form.save()
             form = CreateResearcherForm()
+            return redirect('publica:ger_pesq')
+
 
 
     context['form'] = form
     context['researchers'] = researchers
     context['researchers_list'] = researchers_list
     return render(request, "publica/manage_researchers.html", context)
+
+
+@login_required
+def update_researcher(request, researcher_id):
+    context = {}
+
+    researchers = Researcher.objects.all()
+    researchers_list = list(researchers.values())
+
+    obj = get_object_or_404(Researcher, id=researcher_id)
+
+    form = CreateResearcherForm(request.POST or None, instance=obj)
+
+    if form.is_valid():
+        form.save()
+        return redirect('publica:ger_pesq')
+
+    context['form'] = form
+    context['researchers'] = researchers
+    context['researchers_list'] = researchers_list
+    return render(request, "publica/manage_researchers.html", context)
+
+
+@login_required
+def delete_researcher(request, researcher_id=None):
+    researcher_to_delete = Researcher.objects.get(id=researcher_id)
+    researcher_to_delete.delete()
+    return redirect('publica:ger_pesq')
 
 
 
