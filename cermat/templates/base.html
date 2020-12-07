@@ -1,0 +1,119 @@
+{% load static i18n %}<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}site_cermat{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+
+    {% block css %}
+
+    <!-- Your stuff: Third-party CSS libraries go here -->
+    <!-- This file stores project-specific CSS -->
+
+    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    {% endblock %}
+
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <div id="navbar">
+            <picture id="logo_img">
+                <source  srcset="{% static 'images/geral/Logo_V2.svg' %}" media="(min-width: 480px)">
+                <img  src="{% static 'images/geral/Logo_Letreiro.svg' %}" alt="Logo CERMAT Reduzido">
+            </picture>
+            <nav>
+                <img src="{% static 'images/geral/menu_v3.svg' %}" alt="Menu" @click="toggleMenu" >
+        </div>
+        <div class="nav-links" :class="{navLinksOpen: showNav}">
+            <div class="somos">
+                <a href="{% url 'sobre' %}">Quem Somos</a>
+                <ul>
+                    <li><a href="{% url 'equipe' %}">Equipe</a></li>
+                    <li><a href="{% url 'parceiros' %}">Parceiros</a></li>
+                </ul>
+            </div>
+            <div class="prodc">
+                <a href="{% url 'publica:prod_cient' %}">Produção Científica</a>
+                <ul>
+                  <li><a href="{% url 'publica:lista_publica' %}">Publicações</a></li>
+                  <li><a href="{% url 'publica:lista_projetos' %}">Projetos</a></li>
+                  <li><a href="#">Patentes</a></li>
+                  <li><a href="#">Produtos Tecnológicos</a></li>
+                  <!--<li><a href="#">Linhas de Pesquisa</a></li> #TODO: Criar a pag de linhas de pesq. Ela precisa explicar cada linha. -->
+                </ul>
+            </div>
+            <div class="serv">
+                <a href="">Serviços</a>
+                <ul>
+                    <li><a href="#">Peerlab</a></li>
+                </ul>
+            </div>
+            <div class="cont">
+                <a href="">Contato</a>
+            </div>
+            {% if request.user.is_authenticated %}
+            <div class="login">
+              <a href="{% url 'users:detail' request.user.username %}">{% trans "Minha Conta" %}</a>
+            </div>
+            <div class="logout">
+              <a href="{% url 'account_logout' %}">{% trans "Sair" %}</a>
+            </div>
+            {% else %}
+            <div class="logout">
+              <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Entrar" %}</a>
+            </div>
+            <div class="login">
+              <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Registrar" %}</a>
+            </div>
+            {% endif %}
+        </div>
+            </nav>
+      </header>
+      <div class="container">
+        {% block content %}
+        <p>Site do lab cermat This text is inherited on other pages!</p>
+        {% endblock %}
+      </div>
+      <footer>
+        <img src="{% static 'images/geral/EMCComBorda.png' %}" alt="Logo EMC com borda">
+            <p>Centro Tecnológico – UFSC – Florianópolis/ SC – Brasil <br>
+                Telefone: + 55 48 3721-7223 <br>
+                Email: cermat@contato.ufsc.br
+            </p>
+        <img src="{% static 'images/geral/brasao_UFSC_vertical_sigla_fundoescuro.svg' %}" alt="Logo UFSC">
+      </footer>
+    </div>
+    {% block modal %}{% endblock modal %}
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% block javascript %}
+      <!-- Your stuff: Third-party javascript libraries go here -->
+      <script src="https://unpkg.com/vue@next"></script>
+
+      <!-- place project specific Javascript in this file -->
+      <script src="{% static 'js/project.js' %}"></script>
+
+      <!--Vue Components-->
+      <script src="{% static 'js/VueComponents/Modal.js' %}"></script>
+      <script src="{% static 'js/VueComponents/researcherModal.js' %}"></script>
+
+      <!--Mount Vue App-->
+      <script>const mountedApp = app.mount('#app')</script>
+    {% endblock javascript %}
+  </body>
+</html>
+

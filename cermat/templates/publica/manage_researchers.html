@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<div class="wherebar">
+  <p><a href="{% url 'home' %}" >Inicio</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="{% url 'users:detail' request.user.username %}">Minha Conta</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="{% url 'publica:ger_pesq' %}">Gerenciar Pesquisadores</a></p>
+</div>
+  <div class="content_container">
+    <div id="researchers_box">
+      {% for researcher in researchers %}
+      <div class="researcher_item" >
+        <span @click="researcherModal({{researcher.id}})" >{{ researcher.name | capfirst | truncatewords:6 }}</span>
+        <button class="smallBtn"><a href="{% url 'publica:atualizar_pesq' researcher.id %}" > Editar </a></button>
+        <button class="smallBtn"> <a href="{% url 'publica:deletar_pesq' researcher.id %}">Deletar</a></button>
+      </div>
+      {% endfor %}
+    </div>
+    <div id="edit_researchers">
+      <form id="pesq_form" method="POST">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <input class='smallBtn' type="submit" value="Salvar">
+      </form>
+    </div>
+  </div>
+  {{researchers_list|json_script:"researchers_list"}}
+  <script>
+    const researchers_list = JSON.parse(document.getElementById('researchers_list').textContent);
+  </script>
+
+  <researchModal :researcher_id="researcher_id" :researchers_list="researchers_list" v-if="showModal" @close="showModal = false">
+  </researchModal>
+{% endblock %}

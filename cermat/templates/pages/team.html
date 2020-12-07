@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} Equipe {% endblock %}
+
+{% block content %}
+<h1>pagina em constr</h1>
+
+
+<button id="show-modal" @click="showModal = true">Show Modal</button>
+<modal v-if="showModal" @close="showModal = false" >
+  <template v-slot:header>
+    <h3 >Header personali</h3>
+  </template>
+  <template v-slot:body>
+    <h4>Um subtitulo</h4>
+    <p>Algum texto</p>
+  </template>
+  <template v-slot:footer>
+    <div class="modal-footer">
+        Algum rodape
+  </template>
+</modal>
+<p>[[teste]]</p>
+
+{% endblock %}

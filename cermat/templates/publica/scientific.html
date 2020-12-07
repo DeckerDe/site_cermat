@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load publica_tags %}
+
+
+{% block content %}
+<div class="wherebar">
+  <p><a href="{% url 'home' %}" >Inicio</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p>Produção Científica</p>
+</div>
+<div class="banner_pag" id="sci_banner">
+<h1>Conheça um pouco de nossa produção científica.</h1>
+</div>
+<div class="content_container">
+  <div class="content_text">
+    <h2> Nossa área de atuação </h2>
+    <p>O CERMAT conta com vários pesquisadores, que são especialistas em diversas áreas de atuação.
+       <br>
+      Estamos envolvidos em projetos nacionais e internacionais que abrangem desde próteses dentarias à turbinas de propulsão a jato.
+      Esta pluralidade nos permite aplicar diversas soluções inovadoras, em áreas diferentes do conhecimento científico.
+    </p>
+  </div>
+  <figure class="content_img" id="sci_img">
+    <img src="{% static 'images/scient/dental.jpg' %}">
+    <p>Foto por <a href="https://unsplash.com/@jonathanborba?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jonathan Borba</a> em <a href="https://unsplash.com/s/photos/teeth?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+  </figure>
+  <div class="content_text">
+    <h2>Linhas de pesquisa</h2>
+      <ul>
+        <li>Biomateriais</li>
+        <li>Cerâmica tradicional</li>
+        <li>Cerâmicas celulares</li>
+        <li>Compósitos de matriz metálica (MMC)</li>
+        <li>Compósitos de matriz polimérica (PMC)</li>
+        <li>Compósitos de matriz cerâmica (CMC)</li>
+        <li>Fast firing</li>
+        <li>Isoladores elétricos</li>
+        <li>Laminados cerâmicos</li>
+        <li>Modelamento matemático</li>
+        <li>Moldagem por injeção</li>
+        <li>Queimadores porosos</li>
+        <li>Vitrocerâmicos</li>
+      </ul>
+  </div>
+  <div class="content_img">
+    <figure class="content_img" id="sci_img">
+      <img src="{% static 'images/scient/turbine.jpg' %}">
+      <p>Foto por  <a href="https://unsplash.com/@jontyson?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jon Tyson</a> em <a href="https://unsplash.com/s/photos/turbine-rotor?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+    </figure>
+  </div>
+  <div id="sci_projects">
+    <h2>Projetos mais recentes</h2>
+    <p id="sci_advisor">Esta é apenas uma lista com os projetos mais recentes, por favor acesse nossa <a href="{% url 'publica:lista_projetos' %}">página especial para saber mais.</a></p>
+    <ul>
+      {% for project in projects %}
+      <li>{{project.title}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <figure class="content_img">
+    <img src="{% static 'images/scient/projects_photo.jpg' %}">
+    <p> Foto por <a href="https://unsplash.com/@thisisengineering?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"> ThisisEngineering RAEng </a> em <a href="https://unsplash.com/s/photos/science?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+  </figure>
+</div>
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% load static i18n %}<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}site_cermat{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/stylesheet.css' %}">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    {% block css %}
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Your stuff: Third-party CSS libraries go here -->
+    <!-- This file stores project-specific CSS -->
+    <style>
+      body {
+        background-image: url("{% static 'images/homepage/microscopio_mobile_v5.png' %}");
+        background-size: cover;
+      }
+      @media screen and (min-width: 800px){
+        body{
+          background-image: url("{% static 'images/homepage/Microscopio_2400x1600_v2.jpg' %}");
+          background-size: cover;
+  }
+      }
+
+    </style>
+
+    <link href="{% static 'css/homepage.css' %}" rel="stylesheet">
+    {% endblock %}
+
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+          <div id="topmenu">
+              <picture id="logo_img">
+                  <source srcset="{% static 'images/geral/Logo_V2.svg' %}" media="(min-width: 480px)">
+                  <img src="{% static 'images/geral/Logo_Letreiro.svg' %}" alt="Logo CERMAT Reduzido">
+              </picture>
+              <nav>
+                  <img src="{% static 'images/geral/menu_v3.svg' %}" alt="Menu" @click="toggleMenu" >
+          </div>
+          <div class="nav-links" :class="{navLinksOpen: showNav}">
+              <div class="somos">
+                  <a href="{% url 'sobre' %}">Quem Somos</a>
+                  <ul>
+                      <li><a href="{% url 'equipe' %}">Equipe</a></li>
+                      <li><a href="{% url 'parceiros' %}">Parceiros</a></li>
+                  </ul>
+              </div>
+              <div class="prodc">
+                <a href="{% url 'publica:prod_cient' %}">Produção Científica</a>
+                  <ul>
+                      <li><a href="#">Patentes</a></li>
+                      <li><a href="#">Produtos Tecnológicos</a></li>
+                      <li><a href="#">Linhas de Pesquisa</a></li>
+                  </ul>
+              </div>
+              <div class="serv">
+                  <a href="">Serviços</a>
+                  <ul>
+                    <li><a href="" >Peerlab</a></li>
+                  </ul>
+              </div>
+              <div class="cont">
+                  <a href="">Contato</a>
+              </div>
+              {% if request.user.is_authenticated %}
+            <div class="login">
+              <a href="{% url 'users:detail' request.user.username %}">{% trans "Minha Conta" %}</a>
+            </div>
+            <div class="logout">
+              <a href="{% url 'account_logout' %}">{% trans "Sair" %}</a>
+            </div>
+            {% else %}
+            <div class="logout">
+              <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Entrar" %}</a>
+            </div>
+            <div class="login">
+              <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Registrar" %}</a>
+            </div>
+            {% endif %}
+          </div>
+              </nav>
+      </header>
+      <div id="banner">
+          <picture id="banner_img">
+              <source srcset="{% static 'images/homepage/Nucleodepesq_v4.svg' %}" media="(min-width: 1000px)">
+              <img src="{% static 'images/homepage/Nucleodepesq_mobile.svg' %}" alt="Nucleo de pesquisas">
+          </picture>
+      </div>
+      <footer>
+              <img src="{% static 'images/geral/EMCComBorda.png' %}" alt="Logo EMC com borda">
+                  <p>Centro Tecnológico – UFSC – Florianópolis/ SC – Brasil <br>
+                      Telefone: + 55 48 3721-7223 <br>
+                      Email: cermat@contato.ufsc.br
+                  </p>
+          <img src="{% static 'images/geral/brasao_UFSC_vertical_sigla_fundoescuro.svg' %}" alt="Logo UFSC">
+      </footer>
+  </div>
+
+    {% block modal %}{% endblock modal %}
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% block javascript %}
+      <!-- Bootstrap JS and its dependencies-->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+      <!-- Your stuff: Third-party javascript libraries go here -->
+      <script src="https://unpkg.com/vue@next"></script>
+
+      <!-- place project specific Javascript in this file -->
+      <script src="{% static 'js/homepage.js' %}"></script>
+      <script>const mountedApp = app.mount('#app')</script>
+    {% endblock javascript %}
+  </body>
+</html>

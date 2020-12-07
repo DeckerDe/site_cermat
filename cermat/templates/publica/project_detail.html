@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="wherebar">
+  <p><a href="{% url 'home' %}" >Inicio</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="">Produção Científica</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="{% url 'publica:lista_projetos' %}">Projetos</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p>{{project.title}}</p>
+</div>
+<div class="contentContainer">
+  <h1>{{ project.title }}</h1>
+  <p class="date">
+    Publicado em {{ project.publish }} por {{ project.author }}
+  </p>
+  {{project.body }}
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="wherebar">
+  <p><a href="{% url 'home' %}" >Inicio</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="">Produção Científica</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p><a href="{% url 'publica:lista_publica' %}">Publicações</a></p>
+  <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+  <p>{{post.title|truncatewords:10}}</p>
+</div>
+<div class="contentContainer">
+  <h1>{{ post.title }}</h1>
+  <p class="date">
+    Publicado em {{ post.publish }} por <a href="{% url 'users:detail' post.author %}" >{{ post.author }}</a>
+  </p>
+  <div class="list_heading">
+    <h3>Projeto:</h3>
+    <span> <a href="{{ post.proj.get_absolute_url }}" >{{ post.proj }}</a></span>
+    <h3> Journal:</h3>
+    <span>{{ post.journal }}</span>
+    {% if post.url %}
+    <h3>Url:</h3>
+    <span> <a href="{{ post.url }}" >{{ post.url }}</a></span>
+    {% endif %}
+  </div>
+  <div class="post_body">
+    {{post.body|safe }}
+  </div>
+</div>
+{% endblock %}
+
