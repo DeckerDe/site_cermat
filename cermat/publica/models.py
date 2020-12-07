@@ -6,6 +6,7 @@ from django.utils.text import slugify
 
 User = get_user_model()
 
+
 class Researcher(models.Model):
     name = models.CharField(max_length=255, unique=True)
     organization = models.CharField(max_length=255)
@@ -14,9 +15,11 @@ class Researcher(models.Model):
     linkedin = models.URLField(blank=True)
     lattes = models.URLField(blank=True)
 
+
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super(PublishedManager,self).get_queryset().filter(status='publicado')
+
 
 class Project(models.Model):
     PROJ_STATUS = (
@@ -50,10 +53,11 @@ class Project(models.Model):
             'publica:projeto_detalhe',
             args=[self.start.year, self.start.month, self.start.day, self.slug])
 
+
 class Publica(models.Model):
-    objects = models.Manager() #Default manager
-    published = PublishedManager() #Custom manager
-    STATUS_CHOICES  = (
+    objects = models.Manager()  # Default manager
+    published = PublishedManager()  # Custom manager
+    STATUS_CHOICES = (
         ('rascunho', 'Rascunho'),
         ('publicado', 'Publicado')
     )
@@ -68,7 +72,7 @@ class Publica(models.Model):
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    status = models.CharField(max_length=10, choices= STATUS_CHOICES)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES)
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -83,8 +87,7 @@ class Publica(models.Model):
         return self.title
 
     def get_edit_url(self):
-        return reverse('publica:editar_publica',
-        args=[self.slug])
+        return reverse('publica:editar_publica', args=[self.slug])
 
     def get_absolute_url(self):
         return reverse(
