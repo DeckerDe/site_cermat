@@ -171,6 +171,10 @@ typings/
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
+.workspace.xml
+
+#pycharm stuff
+.pyc
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
