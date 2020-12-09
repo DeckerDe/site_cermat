@@ -720,6 +720,13 @@ p {
 .pagination{
   color: $space_blue;
 }
+.author_list_icon{
+  width: 2em;
+  fill: $usa_blue;
+  path{
+    fill: $usa_blue;
+  }
+}
 /////////////////PUBLICA DETAIL/////////////////////////////////
 .post_body{
   word-wrap: break-word;

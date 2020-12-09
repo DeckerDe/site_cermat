@@ -674,6 +674,15 @@ p {
   color: #1B3066;
 }
 
+.author_list_icon {
+  width: 2em;
+  fill: #1F5581;
+}
+
+.author_list_icon path {
+  fill: #1F5581;
+}
+
 .post_body {
   word-wrap: break-word;
   margin-top: 1em;

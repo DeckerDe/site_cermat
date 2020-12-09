@@ -30,7 +30,7 @@ def post_list(request):
     except EmptyPage:
         # if page is out of range deliver last page of results
         posts = paginator.page(paginator.num_pages)
-    return render(request, 'publica/list.html', {'page':page, 'posts': posts})
+    return render(request, 'publica/list.html', {'page': page, 'posts': posts})
 
 
 def post_detail(request, year, month, day, post):

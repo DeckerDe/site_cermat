@@ -15,10 +15,13 @@ class Researcher(models.Model):
     linkedin = models.URLField(blank=True)
     lattes = models.URLField(blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
-        return super(PublishedManager,self).get_queryset().filter(status='publicado')
+        return super(PublishedManager, self).get_queryset().filter(status='publicado')
 
 
 class Project(models.Model):

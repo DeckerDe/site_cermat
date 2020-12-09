@@ -12,9 +12,9 @@
   <div class="contentContainer">
     <h1 id="PubliTitle"> Publicações </h1>
     <div class="busca_box">
-      <p> 
-        Nesta página estão todas as nossas publicações. Abaixo você pode realizar uma busca 
-        e mostraremos apenas as publicações que contém o termo inserido. 
+      <p>
+        Nesta página estão todas as nossas publicações. Abaixo você pode realizar uma busca
+        e mostraremos apenas as publicações que contém o termo inserido.
       </p>
       <form id="publiBusca">
         <input name="busca" type="text" placeholder="Buscar por publicações.">
@@ -40,6 +40,22 @@
             <h3>Url:</h3>
             <span> <a href="{{ post.url }}" >{{ post.url }}</a></span>
             {% endif %}
+          </div>
+          <div class="list_heading"> <!-- TODO: Reorganizar esta parte. -->
+            <h3>Autores:</h3>
+              {% for researcher in post.researchers.all %}
+                <span>{{ researcher.name | capfirst }}</span>
+                <svg class="author_list_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512">
+                  <a href="{{ object.researchgate }}" ><path d="M0 32v448h448V32H0zm262.2 334.4c-6.6 3-33.2 6-50-14.2c-9.2-10.6-25.3-33.3-42.2-63.6c-8.9 0-14.7 0-21.4-.6v46.4c0 23.5 6 21.2 25.8 23.9v8.1c-6.9-.3-23.1-.8-35.6-.8c-13.1 0-26.1.6-33.6.8v-8.1c15.5-2.9 22-1.3 22-23.9V225c0-22.6-6.4-21-22-23.9V193c25.8 1 53.1-.6 70.9-.6c31.7 0 55.9 14.4 55.9 45.6c0 21.1-16.7 42.2-39.2 47.5c13.6 24.2 30 45.6 42.2 58.9c7.2 7.8 17.2 14.7 27.2 14.7v7.3zm22.9-135c-23.3 0-32.2-15.7-32.2-32.2V167c0-12.2 8.8-30.4 34-30.4s30.4 17.9 30.4 17.9l-10.7 7.2s-5.5-12.5-19.7-12.5c-7.9 0-19.7 7.3-19.7 19.7v26.8c0 13.4 6.6 23.3 17.9 23.3c14.1 0 21.5-10.9 21.5-26.8h-17.9v-10.7h30.4c0 20.5 4.7 49.9-34 49.9zm-116.5 44.7c-9.4 0-13.6-.3-20-.8v-69.7c6.4-.6 15-.6 22.5-.6c23.3 0 37.2 12.2 37.2 34.5c0 21.9-15 36.6-39.7 36.6z" /></a>
+                </svg>
+                <svg class="author_list_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024">
+                  <a href="{{ object.researchgate }}" ><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM349.3 793.7H230.6V411.9h118.7v381.8zm-59.3-434a68.8 68.8 0 1 1 68.8-68.8c-.1 38-30.9 68.8-68.8 68.8zm503.7 434H675.1V608c0-44.3-.8-101.2-61.7-101.2c-61.7 0-71.2 48.2-71.2 98v188.9H423.7V411.9h113.8v52.2h1.6c15.8-30 54.5-61.7 112.3-61.7c120.2 0 142.3 79.1 142.3 181.9v209.4z" /></a>
+                </svg>
+                <svg class="author_list_icon" clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.1" viewBox="0 0 225 225" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                  <a href="{{ object.researchgate }}" >
+                  <path class="fil0" d="m118 75c21-6 44 26 21 34s-45-26-21-34zm-26 106c-2-3-21-51-23-57 3 0 20 4 32 5 18 0 45-4 53-22 7-13-3-20-2-29 4 2 10 8 13 13 28 41-19 81-73 90zm-23-62c-5-17-7-36 3-52 2-4 6-8 10-10 21-13 58-2 66 5-5 6-39-9-46 15-4 17 8 40 9 47v2l-42-7zm-69-4c0 57 51 110 110 110 49 0 86-27 105-66 20-42 10-93-23-126-61-62-167-33-189 53-2 10-3 18-3 29z"/></a>
+                </svg>
+              {% endfor %}
           </div>
           {{ post.body|safe|truncatewords_html:30 }}
           <h3>
