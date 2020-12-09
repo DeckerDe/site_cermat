@@ -601,6 +601,7 @@ p {
   margin-left: 1em;
   margin-right: 1em;
   color: #1F5581;
+  font-size: 1.2em;
 }
 
 .list_heading span a {
@@ -670,8 +671,33 @@ p {
   color: #1F5581;
 }
 
+.publicard #GAb_list {
+  max-width: 100%;
+  max-height: 20vh;
+}
+
 .pagination {
   color: #1B3066;
+}
+
+.author_list_icon {
+  width: 2em;
+  fill: #1F5581;
+}
+
+.author_list_icon path {
+  fill: #1F5581;
+}
+
+#author_in_list {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5em;
+  align-items: center;
+}
+
+#author_in_list * {
+  margin-left: 2em;
 }
 
 .post_body {
@@ -710,6 +736,35 @@ h1 {
 
 #publica_creation input {
   align-self: center;
+}
+
+#div_id_graphical_abstract div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#div_id_graphical_abstract div small {
+  width: 500px;
+  text-align: center;
+  font-size: 1em;
+}
+
+#div_id_researchers div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#div_id_researchers div small {
+  width: 500px;
+  text-align: center;
+  font-size: 1em;
+}
+
+#div_id_researchers div #id_researchers {
+  min-height: 10em;
+  min-width: 50vw;
 }
 
 #sci_banner {

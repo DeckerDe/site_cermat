@@ -15,10 +15,13 @@ class Researcher(models.Model):
     linkedin = models.URLField(blank=True)
     lattes = models.URLField(blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
-        return super(PublishedManager,self).get_queryset().filter(status='publicado')
+        return super(PublishedManager, self).get_queryset().filter(status='publicado')
 
 
 class Project(models.Model):
@@ -68,6 +71,8 @@ class Publica(models.Model):
     url = models.URLField(blank=True)
     slug = models.SlugField(max_length=250, unique_for_date='publish', unique=True)
     author = models.ForeignKey(User, related_name='publica_posts', on_delete=models.PROTECT)
+    abstract = models.TextField(null=True, blank=True)
+    graphical_abstract = models.ImageField(null=True, blank=True, upload_to='gabs')
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)

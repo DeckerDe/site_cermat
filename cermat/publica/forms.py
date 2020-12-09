@@ -5,33 +5,44 @@ from django import forms
 
 
 class CreatePublicaForm(ModelForm):
+    body = forms.CharField(widget=SummernoteWidget(), label='Corpo da publicação')
 
-    researchers = forms.ModelChoiceField(queryset=Researcher.objects.all(), required=True)
-    body = forms.CharField(widget=SummernoteWidget(), label='Descrição')
     class Meta:
         model = Publica
-        fields = ['title', 'proj','journal','url', 'body', 'status','researchers',]
+        fields = ['title', 'proj', 'journal', 'url', 'abstract', 'graphical_abstract', 'body', 'status', 'researchers']
         labels = {
             'title': 'Título',
             'proj': 'Projeto',
-            'journal':'Journal',
-            'url':'Url',
-            'body': 'Descrição',
+            'journal': 'Journal',
+            'abstract': 'Resumo',
+            'graphical_abstract': 'Graphical abstract',
+            'url': 'Url',
+            'body': 'Corpo da publicação',
             'researchers': 'Pesquisadores',
         }
+        help_texts = {
+            'graphical_abstract': "O GAb tem precedência sobre o resumo, portanto caso for inserido "
+                                  "anulará a apresentação deste na lista de publicações. Porém, ele ainda "
+                                  "será inserido nos detalhes da publicação.",
+            'researchers': "Para selecionar mais de um autor mantenha a tecla CTRL pressionada e clique nos"
+                           "respectivos nomes."
+        }
+
 
 class UpdatePublicaForm(ModelForm):
 
     body = forms.CharField(widget=SummernoteWidget(), label='Descrição')
+
     class Meta:
         model = Publica
-        fields = ['proj','journal','url', 'body', 'status']
+        fields = ['proj', 'journal', 'url', 'body', 'status']
         labels = {
             'proj': 'Projeto',
-            'journal':'journal',
-            'url':'Url',
+            'journal': 'journal',
+            'url': 'Url',
             'body': 'Descrição',
         }
+
 
 class CreateResearcherForm(ModelForm):
     class Meta:
