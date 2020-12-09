@@ -14,7 +14,7 @@ class User(AbstractUser):
     )
     photo = models.ImageField("Foto de perfil", upload_to='usersphotos', blank=True)
     researchgate = models.URLField(blank=True)
-    linkedin =  models.URLField(blank=True)
+    linkedin = models.URLField(blank=True)
     lattes = models.URLField(blank=True)
 
     def get_absolute_url(self):

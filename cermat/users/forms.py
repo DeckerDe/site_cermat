@@ -10,8 +10,9 @@ class UserUpdateForm(ModelForm):
     class Meta:
         model = User
         fields = [
-        "name", "photo", "researchgate", "linkedin", "lattes"
+          "name", "photo", "researchgate", "linkedin", "lattes"
         ]
+
 
 class UserChangeForm(forms.UserChangeForm):
     class Meta(forms.UserChangeForm.Meta):

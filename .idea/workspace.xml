@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7861b7dc-906a-436b-a670-8ad71eed8803" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/cermat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cermat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cermat/publica/migrations/0017_auto_20201209_0954.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cermat/publica/migrations/0018_auto_20201209_1024.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cermat/publica/migrations/0019_auto_20201209_1030.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cermat/publica/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cermat/publica/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cermat/publica/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cermat/publica/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cermat/publica/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cermat/publica/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cermat/static/css/project.css" beforeDir="false" afterPath="$PROJECT_DIR$/cermat/static/css/project.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cermat/static/sass/project.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cermat/static/sass/project.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cermat/templates/publica/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/cermat/templates/publica/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cermat/templates/publica/publica_create_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/cermat/templates/publica/publica_create_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cermat/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cermat/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cermat/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cermat/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +56,7 @@
       <workItem from="1607362033600" duration="4478000" />
       <workItem from="1607430322185" duration="3425000" />
       <workItem from="1607434211093" duration="1936000" />
+      <workItem from="1607515193804" duration="9292000" />
     </task>
     <servers />
   </component>

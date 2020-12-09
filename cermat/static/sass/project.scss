@@ -654,6 +654,7 @@ p {
     margin-left: 1em;
     margin-right: 1em;
     color: $usa_blue;
+    font-size: 1.2em;
     a{
       text-decoration: none;
       color: $usa_blue;
@@ -716,6 +717,11 @@ p {
       color: $usa_blue;
     }
   }
+  #GAb_list{
+    max-width: 100%;
+    max-height: 20vh;
+  }
+
 }
 .pagination{
   color: $space_blue;
@@ -727,6 +733,17 @@ p {
     fill: $usa_blue;
   }
 }
+#author_in_list{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5em;
+  align-items: center;
+
+  *{
+    margin-left: 2em;
+  }
+}
+
 /////////////////PUBLICA DETAIL/////////////////////////////////
 .post_body{
   word-wrap: break-word;
@@ -760,8 +777,36 @@ h1{
   input{
     align-self: center;
   }
+}
+#div_id_graphical_abstract{
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    small{
+      width: 500px;
+      text-align: center;
+      font-size: 1em;
+    }
+  }
+}
+#div_id_researchers{
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    small{
+      width: 500px;
+      text-align: center;
+      font-size: 1em;
+    }
+    #id_researchers{
+      min-height: 10em;
+      min-width: 50vw;
+    }
+  }
 }
 ///////////////////SCIPROD///////////////////////////////////////
 #sci_banner{
