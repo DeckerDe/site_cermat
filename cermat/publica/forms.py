@@ -35,12 +35,22 @@ class UpdatePublicaForm(ModelForm):
 
     class Meta:
         model = Publica
-        fields = ['proj', 'journal', 'url', 'body', 'status']
+        fields = ['proj', 'journal', 'url', 'abstract', 'graphical_abstract', 'body', 'status', 'researchers']
         labels = {
             'proj': 'Projeto',
-            'journal': 'journal',
+            'journal': 'Journal',
+            'abstract': 'Resumo',
+            'graphical_abstract': 'Graphical abstract',
             'url': 'Url',
-            'body': 'Descrição',
+            'body': 'Corpo da publicação',
+            'researchers': 'Pesquisadores',
+        }
+        help_texts = {
+            'graphical_abstract': "O GAb tem precedência sobre o resumo, portanto caso for inserido "
+                                  "anulará a apresentação deste na lista de publicações. Porém, ele ainda "
+                                  "será inserido nos detalhes da publicação.",
+            'researchers': "Para selecionar mais de um autor mantenha a tecla CTRL pressionada e clique nos"
+                           "respectivos nomes."
         }
 
 
