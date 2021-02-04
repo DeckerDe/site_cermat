@@ -18,3 +18,4 @@ django-autoslug==1.9.8  # https://github.com/justinmayer/django-autoslug/
 #Django Meu
 django-summernote==0.8.11.6 # https://github.com/summernote/django-summernote
 
+

@@ -290,6 +290,12 @@ ACCOUNT_ADAPTER = "cermat.users.adapters.AccountAdapter"
 SOCIALACCOUNT_ADAPTER = (
     "cermat.users.adapters.SocialAccountAdapter"
 )
+ACCOUNT_FORMS = {"signup": "cermat.users.forms.UserCreationForm"}
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+# Valid Emails to SignUp.
+ALLOWED_MAIL = (
+    "grad.ufsc.br",
+    "ufsc.br"
+)
