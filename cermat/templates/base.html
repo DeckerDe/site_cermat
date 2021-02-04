@@ -29,22 +29,24 @@
     <div id="app">
       <header>
         <div id="navbar">
-            <picture id="logo_img">
-                <source  srcset="{% static 'images/geral/Logo_V2.svg' %}" media="(min-width: 480px)">
-                <img  src="{% static 'images/geral/Logo_Letreiro.svg' %}" alt="Logo CERMAT Reduzido">
-            </picture>
-            <nav>
-                <img src="{% static 'images/geral/menu_v3.svg' %}" alt="Menu" @click="toggleMenu" >
-        </div>
-        <div class="nav-links" :class="{navLinksOpen: showNav}">
-            <div class="somos">
+          <a id="mobile_logo" href="{% url 'home' %}">
+              <picture id="logo_img">
+                  <source srcset="{% static 'images/geral/Logo_V2.svg' %}" media="(min-width: 480px)">
+                  <img src="{% static 'images/geral/Logo_Letreiro.svg' %}" alt="Logo CERMAT Reduzido">
+              </picture>
+          </a>
+          <nav>
+            <img src="{% static 'images/geral/menu_v3.svg' %}" alt="Menu" @click="toggleMenu" >
+
+            <div class="nav-links" :class="{navLinksOpen: showNav}">
+              <div class="somos">
                 <a href="{% url 'sobre' %}">Quem Somos</a>
                 <ul>
                     <li><a href="{% url 'equipe' %}">Equipe</a></li>
                     <li><a href="{% url 'parceiros' %}">Parceiros</a></li>
                 </ul>
-            </div>
-            <div class="prodc">
+              </div>
+              <div class="prodc">
                 <a href="{% url 'publica:prod_cient' %}">Produção Científica</a>
                 <ul>
                   <li><a href="{% url 'publica:lista_publica' %}">Publicações</a></li>
@@ -53,33 +55,34 @@
                   <li><a href="#">Produtos Tecnológicos</a></li>
                   <!--<li><a href="#">Linhas de Pesquisa</a></li> #TODO: Criar a pag de linhas de pesq. Ela precisa explicar cada linha. -->
                 </ul>
-            </div>
-            <div class="serv">
+              </div>
+              <div class="serv">
                 <a href="">Serviços</a>
                 <ul>
                     <li><a href="#">Peerlab</a></li>
                 </ul>
-            </div>
-            <div class="cont">
+              </div>
+              <div class="cont">
                 <a href="">Contato</a>
-            </div>
-            {% if request.user.is_authenticated %}
-            <div class="login">
+              </div>
+              {% if request.user.is_authenticated %}
+              <div class="login">
               <a href="{% url 'users:detail' request.user.username %}">{% trans "Minha Conta" %}</a>
+              </div>
+              <div class="logout">
+               <a href="{% url 'account_logout' %}">{% trans "Sair" %}</a>
+              </div>
+              {% else %}
+              <div class="logout">
+                <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Entrar" %}</a>
+              </div>
+              <div class="login">
+                <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Registrar" %}</a>
+              </div>
+              {% endif %}
             </div>
-            <div class="logout">
-              <a href="{% url 'account_logout' %}">{% trans "Sair" %}</a>
-            </div>
-            {% else %}
-            <div class="logout">
-              <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Entrar" %}</a>
-            </div>
-            <div class="login">
-              <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Registrar" %}</a>
-            </div>
-            {% endif %}
+          </nav>
         </div>
-            </nav>
       </header>
       <div class="container">
         {% block content %}

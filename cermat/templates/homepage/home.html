@@ -46,10 +46,12 @@
     <div id="app">
       <header>
           <div id="topmenu">
+            <a id="mobile_logo" href="{% url 'home' %}">
               <picture id="logo_img">
                   <source srcset="{% static 'images/geral/Logo_V2.svg' %}" media="(min-width: 480px)">
                   <img src="{% static 'images/geral/Logo_Letreiro.svg' %}" alt="Logo CERMAT Reduzido">
               </picture>
+            </a>
               <nav>
                   <img src="{% static 'images/geral/menu_v3.svg' %}" alt="Menu" @click="toggleMenu" >
           </div>

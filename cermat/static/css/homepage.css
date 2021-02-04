@@ -39,6 +39,10 @@ body {
     margin: 0.2em auto 0.2em 0.2em;
     width: 40vw;
   }
+  #mobile_logo {
+    margin: 0.2em auto 0.2em 0.2em;
+    width: 50vw;
+  }
   /* NAVBAR */
   nav {
     position: relative;
@@ -103,7 +107,7 @@ p {
   font-family: "Open Sans", sans-serif;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 480px) and (max-width: 800px) {
   /*NAVBAR*/
   #topmenu nav img {
     margin: 2em;
@@ -114,6 +118,12 @@ p {
   }
   header {
     height: 12vh;
+  }
+  #mobile_logo {
+    width: 50vw;
+  }
+  #mobile_logo #logo_img img {
+    height: 11vh;
   }
 }
 
