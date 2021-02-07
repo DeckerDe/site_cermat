@@ -30,16 +30,15 @@ body {
     flex-flow: row wrap;
     /*outline: 1px solid black; */
     align-items: center;
-  }
-  #logo_img {
-    margin: 0.2em auto 0.2em 0.2em;
-    width: 40vw;
+    justify-content: space-between;
   }
   #mobile_logo {
     width: 50vw;
   }
   #mobile_logo #logo_img img {
-    height: 11vh;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    box-sizing: border-box;
   }
   /* NAVBAR */
   nav {
@@ -63,8 +62,9 @@ body {
     height: 90vh;
     width: 100vw;
     position: fixed;
+    left: 0;
+    top: 10vh;
     clip-path: circle(1px at 90% -10%);
-    -webkit-clip-path: circle(1px at 90% -10%);
     transition: all 0.4s linear;
     pointer-events: none;
     justify-content: space-around;
@@ -76,7 +76,6 @@ body {
   }
   .navLinksOpen {
     clip-path: circle(1600px at 90% -10%);
-    -webkit-clip-path: circle(1600px at 90% -10%);
     pointer-events: all;
   }
   .somos ul, .prodc ul, .serv ul, .cont ul {
@@ -91,6 +90,7 @@ body {
   }
   .container {
     padding-top: 10vh;
+    max-width: 100vw;
   }
   .content_container {
     display: flex;
@@ -112,6 +112,9 @@ body {
     text-decoration: none;
   }
   .content_img {
+    box-sizing: border-box;
+  }
+  .content_img img {
     max-width: 100%;
   }
   .content_img p {
@@ -160,6 +163,12 @@ body {
   header {
     height: 12vh;
   }
+  #logo_img img {
+    width: 40vw;
+  }
+  .nav-links {
+    top: 12vh;
+  }
   #mailContainer {
     padding-top: 5vh;
   }
@@ -179,6 +188,7 @@ body {
     display: flex;
     flex-direction: row;
     align-content: center;
+    justify-content: space-between;
   }
   #navbar nav {
     align-self: center;
@@ -188,10 +198,6 @@ body {
     height: 12vh;
     position: fixed;
     width: 100vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
     padding-bottom: 2em;
     background-color: #FFF;
     z-index: 100;
