@@ -1,9 +1,18 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block title %}{{ user.username }}{% endblock %}
 
 {% block content %}
+  <div class="wherebar">
+    <p><a href="{% url 'home' %}" >Inicio</a></p>
+    <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+    <p> <a href="{% url 'users:detail' username=object.username %}" >Perfil de {{object.username}}</a></p>
+    <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+    <p> Atualizar perfil</p>
+  </div>
 <div class="auth_content">
   <h1>{{ user.username }}</h1>
   <form class="form-horizontal" method="post" action="{% url 'users:update' %}" enctype="multipart/form-data">

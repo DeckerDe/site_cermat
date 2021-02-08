@@ -24,8 +24,8 @@
     <!-- Action buttons -->
     <div id="action_buttons">
       <a class="smallBtn profBtn" href="{% url 'users:update' %}" role="button">Atualizar perfil</a>
-      <a class="smallBtn profBtn" href="{% url 'publica:criar_publica' %}" role="button">Criar Publicação</a>
-      <a class="smallBtn profBtn" href="{% url 'publica:ger_pesq' %}" role="button">Gerenciar Pesquisadores</a>
+      <a class="smallBtn profBtn" :class="{notClickable: !isBigEnough}" href="{% url 'publica:criar_publica' %}" role="button">Criar Publicação</a>
+      <a class="smallBtn profBtn" :class="{notClickable: !isBigEnough}" href="{% url 'publica:ger_pesq' %}" role="button">Gerenciar Pesquisadores</a>
       <a class="smallBtn profBtn" href="{% url 'account_email' %}" role="button">E-Mail</a>
     </div>
     <!-- Your Stuff: Custom user template urls -->
@@ -67,7 +67,7 @@
         <div class="publica_items">
           <p><a href="{{ publica.get_absolute_url }}" >{{publica.title|truncatewords:10}}</a></p>
           <div class="publica_buttons">
-            <a class="smallBtn" href="{{ publica.get_edit_url }}" >Editar</a>
+            <a class="smallBtn" :class="{notClickable: !isBigEnough}" href="{{ publica.get_edit_url }}" >Editar</a>
             <a class="smallBtn" href="{% url 'publica:deletar_publica' publica.id %}" >Deletar</a>
           </div>
         </div>

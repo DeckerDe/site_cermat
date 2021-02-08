@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
+{% load crispy_forms_filters %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
+  <div class="wherebar">
+    <p><a href="{% url 'home' %}" >Inicio</a></p>
+    <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+    <p> <a href="{% url 'users:detail' username=request.user.username %}" >Perfil de {{request.user.username}}</a></p>
+    <img src="{% static 'images/geral/icon/ArrowHead.svg' %}" alt="Ponta de flecha" >
+    <p> Criar Publicação</p>
+  </div>
   <form id="publica_creation" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|crispy }}

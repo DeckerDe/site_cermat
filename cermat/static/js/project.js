@@ -11,6 +11,12 @@ const app = Vue.createApp({
 
         }
     },
+    computed:{
+        isBigEnough(){
+            return window.innerWidth > 760;
+        }
+
+    },
     methods:{
         toggleMenu(){
             if(this.showNav){

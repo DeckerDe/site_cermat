@@ -8,7 +8,6 @@ from django.views.generic import (
     UpdateView,
 )
 from cermat.publica.models import Publica
-import pdb
 
 User = get_user_model()
 
@@ -19,7 +18,7 @@ class UserDetailView(DetailView):
     #   Lookups by Username
     slug_field = "username"
     slug_url_kwarg = "username"
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         slug = self.kwargs.get(self.slug_url_kwarg)
