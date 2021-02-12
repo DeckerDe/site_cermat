@@ -28,6 +28,8 @@ body {
       display: flex;
       flex-flow: column wrap;
   }
+  //TODO: Apply noScroll to the body.
+
   /* HEADER */
   header{
       background-color: $white;
@@ -94,6 +96,7 @@ body {
   .navLinksOpen {
     clip-path: circle(1600px at 90% -10%);
     pointer-events: all;
+    z-index: 10;
   }
   .somos ul,.prodc ul,.serv ul,.cont ul{
       display: none;
@@ -919,7 +922,7 @@ form {
 //////////////BUTTON///////////////////////
 .authBtn {
   color: $white;
-  font-family: Open Sans;
+  font-family: Open Sans, sans-serif;
   font-size: 1.2em;
   font-weight: 400;
   padding: 0.6em 3em;
@@ -942,7 +945,7 @@ form {
 }
 .smallBtn {
   color: $white;
-  font-family: Open Sans;
+  font-family: Open Sans, sans-serif;
   font-size: 1em;
   font-weight: 400;
   padding: 0.3em 1.5em;
@@ -978,7 +981,8 @@ form {
 .notClickable{
   pointer-events: none;
   opacity: 0.5;
-
+  z-index: -1;
+  position: relative;
 }
 //////////////FOOTER///////////////////////
 footer{
@@ -1057,7 +1061,7 @@ footer :last-child{
 
 .modal-container {
   width: 70vw;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 20px 30px;
   background-color: #fff;
   border-radius: 2px;
